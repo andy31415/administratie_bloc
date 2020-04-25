@@ -1,6 +1,10 @@
 ActiveAdmin.register Bloc do
   config.sort_order = 'address_asc'
 
+  sidebar "Informatii", only: [:show, :edit] do
+    link_to "Toate scarile", admin_bloc_scari_path(resource)
+  end
+
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
@@ -36,6 +40,14 @@ ActiveAdmin.register Bloc do
     panel "Cheltuieli active" do
       table_for bloc.cheltuieli do
         column :nume
+      end
+    end
+
+    panel "Scari" do
+      table_for bloc.scari do
+        column do |scara|
+          link_to scara.nume, admin_bloc_scara_path(scara)
+        end
       end
     end
   end

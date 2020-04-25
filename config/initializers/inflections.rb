@@ -7,6 +7,7 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
    inflect.plural /^(scar)a$/i, '\1i'
    inflect.plural /^(proprietar)/i, '\1i'
    inflect.singular /^(proprietar)i/i, '\1'
+   inflect.singular /^(scar)i/i, '\1a'
 #   inflect.singular /^(ox)en/i, '\1'
 #   inflect.irregular 'person', 'people'
    inflect.uncountable %w( cheltuieli )
