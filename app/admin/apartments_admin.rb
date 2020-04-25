@@ -17,6 +17,7 @@ Trestle.resource(:apartments) do
      select :scara_id, Scara.all, include_blank: false
      text_field :usa
      text_field :proprietar
+     number_field :balanta, step: 0.01
   end
 
   #   row do
