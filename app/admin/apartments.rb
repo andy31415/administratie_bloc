@@ -21,10 +21,9 @@ ActiveAdmin.register Apartment do
   #   permitted
   # end
 
-  index do
+  index :title => 'Apartamente' do
     selectable_column
     column :usa
-    column :scara
     column :titular
     column :balanta
     column "Access" do |apartament|

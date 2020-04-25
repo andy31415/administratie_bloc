@@ -11,18 +11,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b36fc850-5326-430f-9277-3d2e49b1c67b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/AdministratorDeBloc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/AdministratorDeBloc.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AdministratorDeBloc.iws" beforeDir="false" afterPath="$PROJECT_DIR$/AdministratorDeBloc.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/admin/apartments.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin/apartments.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/admin/blocs.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin/blocs.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/admin/scari.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin/scari.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/bloc.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/bloc.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/scara.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/scara.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/environments/development.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/environments/development.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/initializers/active_admin.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/initializers/active_admin.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/initializers/inflections.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/initializers/inflections.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/cheltuieli.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/cheltuieli.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,10 +229,10 @@
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
     <state x="669" y="203" width="770" height="780" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/70.27.1978.1125@70.27.1978.1125" timestamp="1587827468878" />
-    <state x="750" y="330" width="618" height="518" key="find.popup" timestamp="1587836011982">
+    <state x="750" y="330" width="618" height="518" key="find.popup" timestamp="1587840099567">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
-    <state x="750" y="330" width="618" height="518" key="find.popup/70.27.1978.1125@70.27.1978.1125" timestamp="1587836011982" />
+    <state x="750" y="330" width="618" height="518" key="find.popup/70.27.1978.1125@70.27.1978.1125" timestamp="1587840099567" />
     <state x="722" y="277" width="672" height="678" key="search.everywhere.popup" timestamp="1587838817215">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>

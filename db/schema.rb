@@ -96,6 +96,6 @@ ActiveRecord::Schema.define(version: 2020_04_25_171433) do
     t.index ["bloc_id"], name: "index_scari_on_bloc_id"
   end
 
-  add_foreign_key "apartments", "scari", column: "scara_id"
+  add_foreign_key "apartments", "scari"
   add_foreign_key "scari", "blocs"
 end
