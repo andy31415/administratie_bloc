@@ -5,7 +5,7 @@ ActiveAdmin.register Bloc do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :address
+  permit_params :address
   #
   # or
   #

@@ -5,7 +5,7 @@ ActiveAdmin.register Apartment do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :usa, :scara_id, :proprietar, :balanta
+  permit_params :usa, :scara_id, :proprietar, :balanta
   #
   # or
   #

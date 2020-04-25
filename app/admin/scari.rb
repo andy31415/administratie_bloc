@@ -5,7 +5,7 @@ ActiveAdmin.register Scara do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :nume, :bloc_id
+  permit_params :nume, :bloc_id
   #
   # or
   #
