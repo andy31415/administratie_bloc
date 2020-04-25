@@ -11,14 +11,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b36fc850-5326-430f-9277-3d2e49b1c67b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/db/migrate/20200425150911_create_join_table_blocs_cheltuieli.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/migrate/20200425171433_create_join_table_apartments_proprietari.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdministratorDeBloc.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/AdministratorDeBloc.ipr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AdministratorDeBloc.iws" beforeDir="false" afterPath="$PROJECT_DIR$/AdministratorDeBloc.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/admin/apartments.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin/apartments.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/admin/blocs.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin/blocs.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/admin/cheltuieli.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin/cheltuieli.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/admin/scari.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin/scari.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/bloc.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/bloc.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/cheltuieli.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/cheltuieli.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/proprietari.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin/proprietari.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/apartment.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/apartment.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/proprietar.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/proprietar.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/proprietari.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/initializers/inflections.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/initializers/inflections.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20200425134331_create_apartments.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20200425134331_create_apartments.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
     </list>
@@ -194,52 +198,56 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1932" height="299" key="GridCell.Tab.0.bottom" timestamp="1587827694406">
+    <state width="1932" height="299" key="GridCell.Tab.0.bottom" timestamp="1587836254215">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
-    <state width="1932" height="299" key="GridCell.Tab.0.bottom/70.27.1978.1125@70.27.1978.1125" timestamp="1587827694406" />
-    <state width="1932" height="299" key="GridCell.Tab.0.center" timestamp="1587827694406">
+    <state width="1932" height="299" key="GridCell.Tab.0.bottom/70.27.1978.1125@70.27.1978.1125" timestamp="1587836254215" />
+    <state width="1932" height="299" key="GridCell.Tab.0.center" timestamp="1587836254214">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
-    <state width="1932" height="299" key="GridCell.Tab.0.center/70.27.1978.1125@70.27.1978.1125" timestamp="1587827694406" />
-    <state width="1932" height="299" key="GridCell.Tab.0.left" timestamp="1587827694406">
+    <state width="1932" height="299" key="GridCell.Tab.0.center/70.27.1978.1125@70.27.1978.1125" timestamp="1587836254214" />
+    <state width="1932" height="299" key="GridCell.Tab.0.left" timestamp="1587836254214">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
-    <state width="1932" height="299" key="GridCell.Tab.0.left/70.27.1978.1125@70.27.1978.1125" timestamp="1587827694406" />
-    <state width="1932" height="299" key="GridCell.Tab.0.right" timestamp="1587827694406">
+    <state width="1932" height="299" key="GridCell.Tab.0.left/70.27.1978.1125@70.27.1978.1125" timestamp="1587836254214" />
+    <state width="1932" height="299" key="GridCell.Tab.0.right" timestamp="1587836254214">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
-    <state width="1932" height="299" key="GridCell.Tab.0.right/70.27.1978.1125@70.27.1978.1125" timestamp="1587827694406" />
-    <state width="1932" height="299" key="GridCell.Tab.1.bottom" timestamp="1587827694407">
+    <state width="1932" height="299" key="GridCell.Tab.0.right/70.27.1978.1125@70.27.1978.1125" timestamp="1587836254214" />
+    <state width="1932" height="299" key="GridCell.Tab.1.bottom" timestamp="1587836254215">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
-    <state width="1932" height="299" key="GridCell.Tab.1.bottom/70.27.1978.1125@70.27.1978.1125" timestamp="1587827694407" />
-    <state width="1932" height="299" key="GridCell.Tab.1.center" timestamp="1587827694407">
+    <state width="1932" height="299" key="GridCell.Tab.1.bottom/70.27.1978.1125@70.27.1978.1125" timestamp="1587836254215" />
+    <state width="1932" height="299" key="GridCell.Tab.1.center" timestamp="1587836254215">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
-    <state width="1932" height="299" key="GridCell.Tab.1.center/70.27.1978.1125@70.27.1978.1125" timestamp="1587827694407" />
-    <state width="1932" height="299" key="GridCell.Tab.1.left" timestamp="1587827694406">
+    <state width="1932" height="299" key="GridCell.Tab.1.center/70.27.1978.1125@70.27.1978.1125" timestamp="1587836254215" />
+    <state width="1932" height="299" key="GridCell.Tab.1.left" timestamp="1587836254215">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
-    <state width="1932" height="299" key="GridCell.Tab.1.left/70.27.1978.1125@70.27.1978.1125" timestamp="1587827694406" />
-    <state width="1932" height="299" key="GridCell.Tab.1.right" timestamp="1587827694407">
+    <state width="1932" height="299" key="GridCell.Tab.1.left/70.27.1978.1125@70.27.1978.1125" timestamp="1587836254215" />
+    <state width="1932" height="299" key="GridCell.Tab.1.right" timestamp="1587836254215">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
-    <state width="1932" height="299" key="GridCell.Tab.1.right/70.27.1978.1125@70.27.1978.1125" timestamp="1587827694407" />
+    <state width="1932" height="299" key="GridCell.Tab.1.right/70.27.1978.1125@70.27.1978.1125" timestamp="1587836254215" />
+    <state width="263" height="500" key="HiddenNamespacesPopup" timestamp="1587835240244">
+      <screen x="70" y="27" width="1978" height="1125" />
+    </state>
+    <state width="263" height="500" key="HiddenNamespacesPopup/70.27.1978.1125@70.27.1978.1125" timestamp="1587835240244" />
     <state x="669" y="203" width="770" height="780" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1587827468878">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
     <state x="669" y="203" width="770" height="780" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/70.27.1978.1125@70.27.1978.1125" timestamp="1587827468878" />
-    <state x="750" y="330" width="618" height="518" key="find.popup" timestamp="1587826993636">
+    <state x="750" y="330" width="618" height="518" key="find.popup" timestamp="1587836011982">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
-    <state x="750" y="330" width="618" height="518" key="find.popup/70.27.1978.1125@70.27.1978.1125" timestamp="1587826993636" />
-    <state x="722" y="277" width="672" height="678" key="search.everywhere.popup" timestamp="1587828102357">
+    <state x="750" y="330" width="618" height="518" key="find.popup/70.27.1978.1125@70.27.1978.1125" timestamp="1587836011982" />
+    <state x="722" y="277" width="672" height="678" key="search.everywhere.popup" timestamp="1587836005259">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
-    <state x="722" y="277" width="672" height="678" key="search.everywhere.popup/70.27.1978.1125@70.27.1978.1125" timestamp="1587828102357" />
+    <state x="722" y="277" width="672" height="678" key="search.everywhere.popup/70.27.1978.1125@70.27.1978.1125" timestamp="1587836005259" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/AdministratorDeBloc@Development__AdministratorDeBloc.rcov" NAME="Development: AdministratorDeBloc Coverage Results" MODIFIED="1587827694392" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="AdministratorDeBloc" />
+    <SUITE FILE_PATH="coverage/AdministratorDeBloc@Development__AdministratorDeBloc.rcov" NAME="Development: AdministratorDeBloc Coverage Results" MODIFIED="1587836254200" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="AdministratorDeBloc" />
   </component>
 </project>

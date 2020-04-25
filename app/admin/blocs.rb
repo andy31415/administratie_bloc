@@ -19,7 +19,7 @@ ActiveAdmin.register Bloc do
 
   form do |f|
      f.actions
-     f.inputs 'Countries / Regions' do
+     f.inputs 'Cheltuieli active' do
        f.input :address
        f.input :cheltuieli, :as => :select, :input_html => {:multiple => true}
      end
