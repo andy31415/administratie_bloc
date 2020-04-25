@@ -5,7 +5,7 @@ class Scara < ApplicationRecord
 
 
   def to_s
-    nume
+    "#{nume} (#{bloc.address})"
   end
 
 end

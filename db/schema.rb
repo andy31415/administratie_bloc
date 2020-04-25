@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_25_132825) do
+ActiveRecord::Schema.define(version: 2020_04_25_134331) do
 
   create_table "administrators", force: :cascade do |t|
     t.string "email"
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(version: 2020_04_25_132825) do
     t.datetime "remember_token_expires_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "apartments", force: :cascade do |t|
+    t.string "usa"
+    t.integer "scara_id", null: false
+    t.string "proprietar"
+    t.decimal "balanta"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["scara_id"], name: "index_apartments_on_scara_id"
   end
 
   create_table "blocs", force: :cascade do |t|
@@ -37,5 +47,6 @@ ActiveRecord::Schema.define(version: 2020_04_25_132825) do
     t.index ["bloc_id"], name: "index_scari_on_bloc_id"
   end
 
+  add_foreign_key "apartments", "scari", column: "scara_id"
   add_foreign_key "scari", "blocs"
 end
