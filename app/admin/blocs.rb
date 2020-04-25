@@ -26,7 +26,7 @@ ActiveAdmin.register Bloc do
       link_to bloc.address, admin_bloc_path(bloc)
     end
     actions do |bloc|
-      item "Raport Lunar", admin_bloc_path(bloc)
+      item "Raport Lunar", genereaza_raport_lunar_path(bloc)
     end
   end
 
