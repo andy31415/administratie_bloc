@@ -4,6 +4,7 @@ class CreateApartments < ActiveRecord::Migration[6.0]
       t.string :usa
       t.belongs_to :scara, null: false, foreign_key: true
       t.string :proprietar
+      t.integer :persoane
       t.numeric :balanta
 
       t.timestamps

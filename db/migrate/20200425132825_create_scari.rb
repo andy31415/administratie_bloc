@@ -1,4 +1,4 @@
-class CreateScaras < ActiveRecord::Migration[6.0]
+class CreateScari < ActiveRecord::Migration[6.0]
   def change
     create_table :scari do |t|
       t.string :nume

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_25_142455) do
+ActiveRecord::Schema.define(version: 2020_04_25_145610) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2020_04_25_142455) do
     t.string "usa"
     t.integer "scara_id", null: false
     t.string "proprietar"
+    t.integer "persoane"
     t.decimal "balanta"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -50,6 +51,13 @@ ActiveRecord::Schema.define(version: 2020_04_25_142455) do
 
   create_table "blocs", force: :cascade do |t|
     t.string "address"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "cheltuieli", force: :cascade do |t|
+    t.string "nume"
+    t.integer "tip"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
