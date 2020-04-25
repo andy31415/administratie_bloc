@@ -2,7 +2,8 @@ class RaportLunarController < ApplicationController
   before_action :authenticate_admin_user!
 
   def start
-    puts params.inspect
+    @bloc = Bloc.find(params[:id])
+    puts @bloc.inspect
   end
 
 end

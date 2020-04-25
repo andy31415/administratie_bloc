@@ -1,1 +1,11 @@
-FIXME: implement
+<h3>
+  Raport lunar pentru <span class="adresa-bloc"> <%= @bloc.address %> </span>
+</h3>
+
+<div>
+  <div>Cheltuieli</div>
+
+  <% @bloc.cheltuieli.each do |c| %>
+    <%= c.nume %>
+  <% end %>
+</div>
