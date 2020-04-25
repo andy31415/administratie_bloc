@@ -21,6 +21,13 @@ ActiveAdmin.register Bloc do
   #   permitted
   # end
 
+  index do
+    column "Adresa" do |bloc|
+      link_to bloc.address, admin_bloc_path(bloc)
+    end
+    actions
+  end
+
   form do |f|
      f.actions
      f.inputs 'Cheltuieli active' do
