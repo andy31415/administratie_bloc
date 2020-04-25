@@ -8,7 +8,7 @@
 
 # This is a test seed file only
 
-Administrator.create(email: "andy314@gmail.com", password: "password", first_name: "Andrei", last_name: "Litvin")
+AdminUser.create!(email: 'andy314@gmail.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 
 b = Bloc.create(address: 'RAZOARE 158 C5')
 
