@@ -25,7 +25,9 @@ ActiveAdmin.register Bloc do
     column "Adresa" do |bloc|
       link_to bloc.address, admin_bloc_path(bloc)
     end
-    actions
+    actions do |bloc|
+      item "Raport Lunar", admin_bloc_path(bloc)
+    end
   end
 
   form do |f|
