@@ -52,11 +52,18 @@ Apartment.create(scara: s2, persoane: 0, usa: "30", proprietar: "BRE")
 Apartment.create(scara: s2, persoane: 1, usa: "32A", proprietar: "HADA MARIA")
 Apartment.create(scara: s2, persoane: 1, usa: "32B", proprietar: "HADA MARIA")
 
-Cheltuieli.create(nume: 'Apa', tip: :apa)
-Cheltuieli.create(nume: 'Curatenie', tip: :per_apartment)
-Cheltuieli.create(nume: 'Electric', tip: :per_person)
-Cheltuieli.create(nume: 'Administratie', tip: :cost_fix)
+c1 = Cheltuieli.create(nume: 'Apa', tip: :apa)
+c2 =Cheltuieli.create(nume: 'Curatenie', tip: :per_apartment)
+c3 =Cheltuieli.create(nume: 'Electric', tip: :per_person)
+c4 =Cheltuieli.create(nume: 'Administratie', tip: :cost_fix)
+
+b.cheltuieli << c1
+b.cheltuieli << c2
+b.cheltuieli << c3
+b.cheltuieli << c4
 
 # FIXME: other stuff?
+#
+#
 
 
