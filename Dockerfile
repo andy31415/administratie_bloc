@@ -6,11 +6,11 @@ RUN npm install yarn -g
 
 RUN mkdir /blocadmin
 WORKDIR /blocadmin
-
-ADD ./ /blocadmin
+COPY Gemfile* ./
 RUN gem update bundler
 RUN bundle config set deployment 'true'
 RUN bundle install 
+COPY . /blocadmin
 RUN yarn install --check-files
 
 EXPOSE 3000
