@@ -53,8 +53,8 @@ Apartment.create(scara: s2, persoane: 1, usa: "32A", titular: "HADA MARIA")
 Apartment.create(scara: s2, persoane: 1, usa: "32B", titular: "HADA MARIA")
 
 c1 = Cheltuieli.create(nume: 'Apa', tip: :apa)
-c2 = Cheltuieli.create(nume: 'Curatenie', tip: :impartit_la_nr_apartamente)
-c3 = Cheltuieli.create(nume: 'Electric', tip: :impartit_la_nr_persoane)
+c2 = Cheltuieli.create(nume: 'Curatenie', tip: :impartit_la_nr_apartamente_in_bloc)
+c3 = Cheltuieli.create(nume: 'Electric', tip: :impartit_la_nr_persoane_in_bloc)
 c4 = Cheltuieli.create(nume: 'Administratie', tip: :cost_fix_pe_apartament)
 
 b.cheltuieli << c1

@@ -24,11 +24,17 @@ import {CheltuialaWithValue, selectCheltuieliEntities} from "cheltuieli/app/stat
                 <ng-container *ngIf="cheltuiala.tip === 'cost_fix_pe_persoana'">
                     Cost pe persoana
                 </ng-container>
-                <ng-container *ngIf="cheltuiala.tip === 'impartit_la_nr_apartamente'">
-                    Impartit la numar de apartamente
+                <ng-container *ngIf="cheltuiala.tip === 'impartit_la_nr_apartamente_in_bloc'">
+                    Impartit la numar de apartamente (pe bloc)
                 </ng-container>
-                <ng-container *ngIf="cheltuiala.tip === 'impartit_la_nr_persoane'">
-                    Impartit la numar de persoane
+                <ng-container *ngIf="cheltuiala.tip === 'impartit_la_nr_persoane_in_bloc'">
+                    Impartit la numar de persoane (pe bloc)
+                </ng-container>
+                <ng-container *ngIf="cheltuiala.tip === 'impartit_la_nr_apartamente_in_scara'">
+                    Impartit la numar de apartamente (pe scara)
+                </ng-container>
+                <ng-container *ngIf="cheltuiala.tip === 'impartit_la_nr_persoane_in_scara'">
+                    Impartit la numar de persoane (pe scara)
                 </ng-container>
                 <ng-container *ngIf="cheltuiala.tip === 'manual'">
                     Valoare introdusa manual

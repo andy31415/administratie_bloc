@@ -55,10 +55,16 @@ function getPriceFor(cheltuiala: CheltuialaWithValue, apartament: Apartment, sta
         cost = cheltuiala.value;
     } else if (cheltuiala.tip === "cost_fix_pe_persoana") {
         cost = cheltuiala.value * (apartament.persoane || 0);
-    } else if (cheltuiala.tip === "impartit_la_nr_apartamente") {
+    } else if (cheltuiala.tip === "impartit_la_nr_apartamente_in_bloc") {
         cost = cheltuiala.value / stats.totalApartamente;
-    } else if (cheltuiala.tip === "impartit_la_nr_persoane") {
+    } else if (cheltuiala.tip === "impartit_la_nr_persoane_in_bloc") {
         cost = cheltuiala.value * (apartament.persoane || 0) / stats.totalPersoane;
+    } else if (cheltuiala.tip === "impartit_la_nr_apartamente_in_scara") {
+        const apartamenteInScara = stats.apartamentePeScara[apartament.scaraId] || NaN;
+        cost = cheltuiala.value / apartamenteInScara;
+    } else if (cheltuiala.tip === "impartit_la_nr_persoane_in_scara") {
+        const persoaneInScara = stats.persoanePeScara[apartament.scaraId] || NaN;
+        cost = cheltuiala.value / persoaneInScara;
     } else {
         // console.error("Unknown price: %o", cheltuiala.tip);
     }

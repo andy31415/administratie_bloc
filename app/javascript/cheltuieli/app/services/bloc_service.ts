@@ -6,7 +6,10 @@ import {map} from "rxjs/internal/operators";
 export interface Cheltuiala {
     id: number;
     nume: string;
-    tip: "apa" | "cost_fix_pe_apartament" | "cost_fix_pe_persoana" | "impartit_la_nr_apartamente" | "impartit_la_nr_persoane" | "manual"
+    tip: "apa" | "cost_fix_pe_apartament" | "cost_fix_pe_persoana" |
+        "impartit_la_nr_apartamente_in_bloc" | "impartit_la_nr_persoane_in_bloc" |
+        "impartit_la_nr_apartamente_in_scara" | "impartit_la_nr_persoane_in_scara" |
+    | "manual"
 }
 
 export interface Apartment {

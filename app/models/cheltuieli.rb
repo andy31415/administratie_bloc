@@ -3,8 +3,10 @@ class Cheltuieli < ApplicationRecord
       :apa,
       :cost_fix_pe_apartament,
       :cost_fix_pe_persoana,
-      :impartit_la_nr_apartamente,
-      :impartit_la_nr_persoane,
+      :impartit_la_nr_apartamente_din_bloc,
+      :impartit_la_nr_persoane_in_bloc,
+      :impartit_la_nr_apartamente_in_scara,
+      :impartit_la_nr_persoane_din_scara,
       :manual
   ]
 
