@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {ScaraResultsComponent} from './scara-results.component';
+import {TableModule} from "primeng";
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import {ScaraResultsComponent} from './scara-results.component';
     ScaraResultsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    TableModule
   ]
 })
 export class UxModule {

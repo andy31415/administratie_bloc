@@ -1,7 +1,7 @@
 import {AfterViewInit, Component, ElementRef} from '@angular/core';
 import {Apartment, Bloc, BlocService, Scara} from "cheltuieli/app/services/bloc_service";
 import {combineLatest, Observable, ReplaySubject} from "rxjs";
-import {filter, map, shareReplay, tap} from "rxjs/internal/operators";
+import {filter, map, shareReplay} from "rxjs/internal/operators";
 import {InputCheltuiala} from "cheltuieli/app/cheltuiala_input";
 import {getPriceFor} from "cheltuieli/app/computation";
 import {Store} from '@ngrx/store';
@@ -29,44 +29,7 @@ import {selectCheltuieliEntities} from "cheltuieli/app/state/cheltuiala.reducer"
 
                 <p-tabView>
                     <p-tabPanel *ngFor="let scara of (scari$ | async)" [header]="scara.nume">
-                        <scara-results></scara-results>
-<!--
-                        <p-table [value]="scara.apartamente">
-                            <ng-template pTemplate="header">
-                                <tr>
-                                    <th>Usa</th>
-                                    <th>Titular</th>
-                                    <th>Apa m<sup>3</sup></th>
-                                    <th *ngFor="let c of (inputCheltuieli$ | async)">
-                                        {{c.definitie.nume}}
-                                    </th>
-                                </tr>
-                            </ng-template>
-                            <ng-template pTemplate="body" let-apt>
-                                <tr class="output-line">
-                                    <td>{{apt.usa}}</td>
-                                    <td>{{apt.titular}}</td>
-                                    <td>???</td>
-                                    <td *ngFor="let c of (inputCheltuieli$ | async)">
-                                        <cheltuiala-apartament [input]="c" [apartament]="apt"
-                                                               [totalApartments]="apartmentCount$ | async"
-                                                               [totalPersons]="personCount$ | async"
-                                        >
-                                        </cheltuiala-apartament>
-                                    </td>
-                                </tr>
-                            </ng-template>
-                            <ng-template pTemplate="footer">
-                                <tr class="total-line">
-                                    <td colspan="2">Total</td>
-                                    <td>???</td>
-                                    <td *ngFor="let c of (inputCheltuieli$ | async)">
-                                        {{ computeTotal(c, scara.apartamente, (apartmentCount$ | async), (personCount$ | async)) | number:'1.2-2' }}
-                                    </td>
-                                </tr>
-                            </ng-template>
-                        </p-table>
--->
+                        <scara-results [scaraId]="scara.id"></scara-results>
                     </p-tabPanel>
                 </p-tabView>
 
@@ -138,13 +101,9 @@ export class AppComponent implements AfterViewInit {
 
         this.blocInfo$ =
             combineLatest([store.select(selectBlocEntities), this.blocId$]).pipe(
-                tap(x => {console.log("1: %o", x)}),
                 filter(([a, b]) => !!a && !!b),
-                tap(x => {console.log("2: %o", x)}),
                 map(([entities, id]) => entities[id]),
-                tap(x => {console.log("3: %o", x)}),
                 filter(value => !!value),
-                tap(x => {console.log("4: %o", x)}),
                 shareReplay(1),
             );
 

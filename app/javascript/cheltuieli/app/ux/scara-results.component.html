@@ -1,1 +1,41 @@
-<p>scara-results works!</p>
+<p-table [value]="apartments$ | async">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Usa</th>
+            <th>Titular</th>
+            <th>Apa m<sup>3</sup></th>
+            <!--
+            <th *ngFor="let c of (inputCheltuieli$ | async)">
+                {{c.definitie.nume}}
+            </th>
+            -->
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-apt>
+        <tr class="output-line">
+            <td>{{apt.usa}}</td>
+            <td>{{apt.titular}}</td>
+            <td>???</td>
+            <!--
+            <td *ngFor="let c of (inputCheltuieli$ | async)">
+                <cheltuiala-apartament [input]="c" [apartament]="apt"
+                                       [totalApartments]="apartmentCount$ | async"
+                                       [totalPersons]="personCount$ | async"
+                >
+                </cheltuiala-apartament>
+            </td>
+            -->
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="footer">
+        <tr class="total-line">
+            <td colspan="2">Total</td>
+            <td>???</td>
+            <!--
+            <td *ngFor="let c of (inputCheltuieli$ | async)">
+                {{ computeTotal(c, scara.apartamente, (apartmentCount$ | async), (personCount$ | async)) | number:'1.2-2' }}
+            </td>
+            -->
+        </tr>
+    </ng-template>
+</p-table>
