@@ -1,6 +1,6 @@
 import {Component, Input} from "@angular/core";
 import {InputCheltuiala} from "cheltuieli/app/cheltuiala_input";
-import {ApartamentInfo, ScaraInfo} from "cheltuieli/app/bloc_service";
+import {Apartment, ScaraInfo} from "cheltuieli/app/services/bloc_service";
 import {getPriceFor} from "cheltuieli/app/computation";
 
 @Component({
@@ -14,7 +14,7 @@ export class CheltuialaApartament {
     input: InputCheltuiala;
 
     @Input()
-    apartament: ApartamentInfo;
+    apartament: Apartment;
 
     @Input()
     totalApartments = 0;

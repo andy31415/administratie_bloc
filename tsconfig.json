@@ -1,12 +1,14 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "lib": ["es6", "dom"],
+    "importHelpers": true,
+    "lib": [ "es2018", "dom" ],
     "module": "es6",
     "moduleResolution": "node",
-    "baseUrl": ".",
+    "sourceMap": true,
     "paths": {
         "*": ["node_modules/*", "app/javascript/*"]
     },
@@ -19,5 +21,9 @@
     "vendor",
     "public"
   ],
-  "compileOnSave": false
+  "compileOnSave": false,
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
+  }
 }

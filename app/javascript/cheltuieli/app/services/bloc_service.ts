@@ -3,12 +3,14 @@ import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {map} from "rxjs/internal/operators";
 
-export interface CheltuialaInfo {
+export interface Cheltuiala {
+    id: number;
     nume: string;
     tip: "apa" | "cost_fix_pe_apartament" | "cost_fix_pe_persoana" | "impartit_la_nr_apartamente" | "impartit_la_nr_persoane" | "manual"
 }
 
-export interface ApartamentInfo {
+export interface Apartment {
+    id: number;
     titular: string;
     usa: string;
     persoane: number | null;
@@ -16,17 +18,19 @@ export interface ApartamentInfo {
 }
 
 export interface ScaraInfo {
+    id: number;
     nume: string;
-    apartamente: ApartamentInfo[];
+    apartamente: Apartment[];
 }
 
 export interface BlocReportInfo {
+    id: number;
     address: string;
-    cheltuieli: CheltuialaInfo[];
+    cheltuieli: Cheltuiala[];
     scari: ScaraInfo[];
 }
 
-@Injectable({providedIn: "root"})
+@Injectable()
 export class BlocService {
 
     constructor(private readonly http: HttpClient) {

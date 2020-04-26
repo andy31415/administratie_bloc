@@ -1,7 +1,7 @@
 import {InputCheltuiala} from "cheltuieli/app/cheltuiala_input";
-import {ApartamentInfo} from "cheltuieli/app/bloc_service";
+import {Apartment} from "cheltuieli/app/services/bloc_service";
 
-export function getPriceFor(input: InputCheltuiala, apartament: ApartamentInfo, totalApartments: number, totalPersons: number): number {
+export function getPriceFor(input: InputCheltuiala, apartament: Apartment, totalApartments: number, totalPersons: number): number {
     let cost = NaN;
 
     if (input.definitie.tip === "cost_fix_pe_apartament") {

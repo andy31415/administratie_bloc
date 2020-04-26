@@ -1,8 +1,8 @@
 import {Component, Input} from "@angular/core";
-import {CheltuialaInfo} from "cheltuieli/app/bloc_service";
+import {Cheltuiala} from "cheltuieli/app/services/bloc_service";
 
 export interface InputCheltuiala {
-    definitie: CheltuialaInfo;
+    definitie: Cheltuiala;
     valoare: number;
 }
 

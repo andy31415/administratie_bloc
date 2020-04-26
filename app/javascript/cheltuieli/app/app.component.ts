@@ -1,9 +1,11 @@
 import {AfterViewInit, Component, ElementRef} from '@angular/core';
-import {ApartamentInfo, BlocReportInfo, BlocService} from "cheltuieli/app/bloc_service";
+import {Apartment, BlocReportInfo, BlocService} from "cheltuieli/app/services/bloc_service";
 import {Observable, ReplaySubject} from "rxjs";
 import {map, shareReplay} from "rxjs/internal/operators";
 import {InputCheltuiala} from "cheltuieli/app/cheltuiala_input";
 import {getPriceFor} from "cheltuieli/app/computation";
+import { Store } from '@ngrx/store';
+import {loadStartupData} from "cheltuieli/app/state/startup.effects";
 
 @Component({
     selector: 'generate-report-app',
@@ -138,16 +140,19 @@ export class AppComponent implements AfterViewInit {
     )
 
     constructor(private readonly element: ElementRef,
-                private readonly blocService: BlocService) {
+                private readonly blocService: BlocService,
+                private readonly store: Store<{}>) {
     }
 
     ngAfterViewInit() {
         const blocId = Number(this.element.nativeElement.getAttribute('data-bloc-id'));
+        this.store.dispatch(loadStartupData({blocId}));
 
+        // FIXME: this should go away
         this.blocService.getGenerateReportData(blocId).subscribe(this.blocInfo$)
     }
 
-    computeTotal(c: InputCheltuiala, apartments: ApartamentInfo[],  totalApartamente: number, totalPersoane: number): number{
+    computeTotal(c: InputCheltuiala, apartments: Apartment[],  totalApartamente: number, totalPersoane: number): number{
         if (!c || !totalPersoane || !totalApartamente || !apartments) {
             return NaN;
         }
