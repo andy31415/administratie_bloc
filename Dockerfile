@@ -10,7 +10,9 @@ COPY Gemfile* ./
 RUN gem update bundler
 RUN bundle config set deployment 'true'
 RUN bundle install 
-COPY . /blocadmin
+COPY yarn* ./
+COPY package* ./
 RUN yarn install --check-files
+COPY . /blocadmin
 
 EXPOSE 3000
