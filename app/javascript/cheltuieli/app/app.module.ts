@@ -6,22 +6,27 @@ import { ButtonModule } from 'primeng/button';
 
 import { AppComponent } from './app.component';
 import {CheltuialaInputComponent} from "./cheltuiala_input";
-import {CardModule, PanelModule, TabViewModule, ToolbarModule} from "primeng";
+import {CardModule, PanelModule, TableModule, TabViewModule, ToolbarModule} from "primeng";
+import {FormsModule} from "@angular/forms";
+import {CheltuialaApartament} from "cheltuieli/app/cheltuiala-apartament";
 
 @NgModule({
   declarations: [
     AppComponent,
     CheltuialaInputComponent,
+    CheltuialaApartament,
   ],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
     ButtonModule,
-    HttpClientModule,
     CardModule,
-    ToolbarModule,
+    HttpClientModule,
     PanelModule,
+    TableModule,
     TabViewModule,
+    ToolbarModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
