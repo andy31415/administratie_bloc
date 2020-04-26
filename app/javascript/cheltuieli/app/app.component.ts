@@ -156,7 +156,7 @@ export class AppComponent implements AfterViewInit {
     }
 
     goToAdmin() {
-        browser.setLocation('/admin');
+        window.location.href = '/admin';
     }
 
 }
