@@ -29,6 +29,7 @@ import {selectCheltuieliEntities} from "cheltuieli/app/state/cheltuiala.reducer"
 
                 <p-tabView>
                     <p-tabPanel *ngFor="let scara of (scari$ | async)" [header]="scara.nume">
+                        <scara-results></scara-results>
 <!--
                         <p-table [value]="scara.apartamente">
                             <ng-template pTemplate="header">

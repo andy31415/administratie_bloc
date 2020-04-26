@@ -11,6 +11,7 @@ import {FormsModule} from "@angular/forms";
 import {CheltuialaApartament} from "cheltuieli/app/cheltuiala-apartament";
 import {StateModule} from "cheltuieli/app/state/state.module";
 import {ServicesModule} from "cheltuieli/app/services/services.module";
+import {UxModule} from "cheltuieli/app/ux/ux.module";
 
 @NgModule({
     declarations: [
@@ -31,8 +32,9 @@ import {ServicesModule} from "cheltuieli/app/services/services.module";
         FormsModule,
 
         // Own modules
-        StateModule,
         ServicesModule,
+        StateModule,
+        UxModule,
     ],
     providers: [],
     bootstrap: [AppComponent]
