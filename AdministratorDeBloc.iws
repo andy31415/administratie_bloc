@@ -11,30 +11,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b36fc850-5326-430f-9277-3d2e49b1c67b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/vendor/assets/fonts/open-sans-v15-latin-300.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/assets/fonts/open-sans-v15-latin-300.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/assets/fonts/open-sans-v15-latin-300.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/assets/fonts/open-sans-v15-latin-300.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/assets/fonts/open-sans-v15-latin-300.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/assets/fonts/open-sans-v15-latin-700.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/assets/fonts/open-sans-v15-latin-700.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/assets/fonts/open-sans-v15-latin-700.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/assets/fonts/open-sans-v15-latin-700.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/assets/fonts/open-sans-v15-latin-700.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/assets/fonts/open-sans-v15-latin-regular.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/assets/fonts/open-sans-v15-latin-regular.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/assets/fonts/open-sans-v15-latin-regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/assets/fonts/open-sans-v15-latin-regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/assets/fonts/open-sans-v15-latin-regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/assets/fonts/primeicons.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/assets/fonts/primeicons.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/assets/fonts/primeicons.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/assets/fonts/primeicons.woff" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AdministratorDeBloc.iws" beforeDir="false" afterPath="$PROJECT_DIR$/AdministratorDeBloc.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/javascript/cheltuieli/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/cheltuieli/app/app.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/javascript/cheltuieli/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/cheltuieli/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/javascript/cheltuieli/app/cheltuiala_input.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/cheltuieli/app/cheltuiala_input.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/initializers/assets.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/initializers/assets.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
