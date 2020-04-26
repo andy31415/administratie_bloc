@@ -28,6 +28,9 @@ export const reducer = createReducer(
             cheltuieliValue: {},
         })), state)
     ),
+    on(ApartmentActions.updateApartments,
+        (state, action) => adapter.updateMany(action.apartments, state)
+    ),
 );
 
 
@@ -40,3 +43,4 @@ const {
 
 export const selectApartmentState = createFeatureSelector<State>(apartmentsFeatureKey);
 export const selectApartmentEntities = createSelector(selectApartmentState, selectEntities);
+export const selectAllApartments = createSelector(selectApartmentState, selectAll);

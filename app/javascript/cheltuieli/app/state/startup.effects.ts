@@ -5,9 +5,10 @@ import {Action, createAction, props} from "@ngrx/store";
 import {mergeMap} from "rxjs/internal/operators";
 import {from} from "rxjs";
 import {loadCheltuieli} from "cheltuieli/app/state/cheltuiala.actions";
-import {addBloc, upsertBloc} from "cheltuieli/app/state/bloc.actions";
+import {setBloc} from "cheltuieli/app/state/bloc.actions";
 import {addScari} from "cheltuieli/app/state/scara.actions";
 import {addApartments} from "cheltuieli/app/state/apartment.actions";
+import {recomputeCosts} from "cheltuieli/app/state/apartment.effects";
 
 interface StartupDataLoadParameters {
     blocId: number;
@@ -32,7 +33,7 @@ export class StartupEffects {
 
                         actions.push(loadCheltuieli({cheltuieli: data.cheltuieli}))
 
-                        actions.push(upsertBloc({
+                        actions.push(setBloc({
                             bloc: {
                                 id: data.id,
                                 address: data.address,
@@ -61,6 +62,7 @@ export class StartupEffects {
                             }));
                         }
 
+                        actions.push(recomputeCosts());
                         return from(actions);
                     })
                 )

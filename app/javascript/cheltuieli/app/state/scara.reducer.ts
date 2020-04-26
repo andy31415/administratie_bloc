@@ -59,4 +59,5 @@ const {
 } = adapter.getSelectors();
 
 export const selectScariState = createFeatureSelector<State>(scariFeatureKey);
+export const selectAllScari = createSelector(selectScariState, selectAll);
 export const selectScariEntities = createSelector(selectScariState, selectEntities);

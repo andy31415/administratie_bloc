@@ -1,15 +1,13 @@
 import {AfterViewInit, Component, ElementRef} from '@angular/core';
-import {Apartment, Bloc, BlocService, Scara} from "cheltuieli/app/services/bloc_service";
+import {Apartment, Bloc, BlocService, Cheltuiala, Scara} from "cheltuieli/app/services/bloc_service";
 import {combineLatest, Observable, ReplaySubject} from "rxjs";
-import {filter, map, shareReplay} from "rxjs/internal/operators";
-import {InputCheltuiala} from "cheltuieli/app/ux/cheltuiala_input";
-import {getPriceFor} from "cheltuieli/app/computation";
+import {distinctUntilChanged, filter, map, shareReplay} from "rxjs/internal/operators";
 import {Store} from '@ngrx/store';
 import {loadStartupData} from "cheltuieli/app/state/startup.effects";
-import {selectBlocEntities} from "cheltuieli/app/state/bloc.reducer";
 import {selectApartmentEntities} from "cheltuieli/app/state/apartment.reducer";
 import {selectScariEntities} from "cheltuieli/app/state/scara.reducer";
 import {selectCheltuieliEntities} from "cheltuieli/app/state/cheltuiala.reducer";
+import {selectBloc} from "cheltuieli/app/state/bloc.reducer";
 
 @Component({
     selector: 'generate-report-app',
@@ -23,13 +21,13 @@ import {selectCheltuieliEntities} from "cheltuieli/app/state/cheltuiala.reducer"
             <div class="content">
                 <p-panel header="Costuri" [toggleable]="true"
                          class="costuri-input">
-                    <cheltuiala-input *ngFor="let c of (inputCheltuieli$ | async)"
-                                      [cheltuiala]="c"></cheltuiala-input>
+                    <cheltuiala-input *ngFor="let c of (cheltuieli$ | async); trackBy: cheltuialaId"
+                                      [cheltuialaId]="c.id"></cheltuiala-input>
                 </p-panel>
 
                 <p-tabView>
                     <p-tabPanel *ngFor="let scara of (scari$ | async)" [header]="scara.nume">
-                        <scara-results [scaraId]="scara.id" [cheltuieli]="inputCheltuieli$ | async"></scara-results>
+                        <scara-results [scaraId]="scara.id" [cheltuieli]="cheltuieli$ | async"></scara-results>
                     </p-tabPanel>
                 </p-tabView>
 
@@ -93,19 +91,16 @@ export class AppComponent implements AfterViewInit {
 
     readonly apartmentCount$: Observable<number>;
     readonly personCount$: Observable<number>;
-    readonly inputCheltuieli$: Observable<InputCheltuiala[]>;
+    readonly cheltuieli$: Observable<Cheltuiala[]>;
 
     constructor(private readonly element: ElementRef,
                 private readonly blocService: BlocService,
                 private readonly store: Store<{}>) {
 
-        this.blocInfo$ =
-            combineLatest([store.select(selectBlocEntities), this.blocId$]).pipe(
-                filter(([a, b]) => !!a && !!b),
-                map(([entities, id]) => entities[id]),
-                filter(value => !!value),
-                shareReplay(1),
-            );
+        this.blocInfo$ = store.select(selectBloc).pipe(
+            filter(value => !!value),
+            shareReplay(1),
+        );
 
         this.scari$ = combineLatest([this.blocInfo$, store.select(selectScariEntities)]).pipe(
             filter(([a, b]) => !!a && !!b),
@@ -140,13 +135,10 @@ export class AppComponent implements AfterViewInit {
             shareReplay(1),
         );
 
-        this.inputCheltuieli$ = combineLatest([this.blocInfo$, this.store.select(selectCheltuieliEntities)]).pipe(
+        this.cheltuieli$ = combineLatest([this.blocInfo$, this.store.select(selectCheltuieliEntities)]).pipe(
             filter(([a, b]) => !!a && !!b),
             map(([bloc, cheltuieli]) => bloc.cheltuialaIds.map(id => cheltuieli[id])),
-            map(cheltuieli => cheltuieli.map(definitie => ({
-                definitie,
-                valoare: 0,
-            }))),
+            distinctUntilChanged(),
             shareReplay(1),
         );
     }
@@ -158,20 +150,26 @@ export class AppComponent implements AfterViewInit {
         this.store.dispatch(loadStartupData({blocId}));
     }
 
-    computeTotal(c: InputCheltuiala, apartments: Apartment[], totalApartamente: number, totalPersoane: number): number {
-        if (!c || !totalPersoane || !totalApartamente || !apartments) {
-            return NaN;
-        }
-
-        let total = 0;
-
-        for (const apt of apartments) {
-            const aptPrice = getPriceFor(c, apt, totalApartamente, totalPersoane)
-            if (isNaN(aptPrice)) {
-                continue;
-            }
-            total += aptPrice;
-        }
-        return total;
+    cheltuialaId(c: Cheltuiala) {
+        return c.id;
     }
+
+    /*
+        computeTotal(c: InputCheltuiala, apartments: Apartment[], totalApartamente: number, totalPersoane: number): number {
+            if (!c || !totalPersoane || !totalApartamente || !apartments) {
+                return NaN;
+            }
+
+            let total = 0;
+
+            for (const apt of apartments) {
+                const aptPrice = getPriceFor(c, apt, totalApartamente, totalPersoane)
+                if (isNaN(aptPrice)) {
+                    continue;
+                }
+                total += aptPrice;
+            }
+            return total;
+        }
+     */
 }

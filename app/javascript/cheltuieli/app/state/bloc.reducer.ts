@@ -5,61 +5,20 @@ import {Bloc} from "cheltuieli/app/services/bloc_service";
 
 export const blocuriFeatureKey = 'blocuri';
 
-export interface State extends EntityState<Bloc> {
-  // additional entities state properties
+export interface State {
+  bloc?: Bloc;
 }
 
-export const adapter: EntityAdapter<Bloc> = createEntityAdapter<Bloc>({
-  selectId: b => b.id,
-  sortComparer: (a, b) => a.address.localeCompare(b.address),
-});
 
-export const initialState: State = adapter.getInitialState({
-  // additional entity state properties
-});
+export const initialState: State = {}
 
 
 export const reducer = createReducer(
   initialState,
-  on(BlocActions.addBloc,
-    (state, action) => adapter.addOne(action.bloc, state)
-  ),
-  on(BlocActions.upsertBloc,
-    (state, action) => adapter.upsertOne(action.bloc, state)
-  ),
-  on(BlocActions.addBlocuri,
-    (state, action) => adapter.addMany(action.blocuri, state)
-  ),
-  on(BlocActions.upsertBlocuri,
-    (state, action) => adapter.upsertMany(action.blocuri, state)
-  ),
-  on(BlocActions.updateBloc,
-    (state, action) => adapter.updateOne(action.bloc, state)
-  ),
-  on(BlocActions.updateBlocuri,
-    (state, action) => adapter.updateMany(action.blocuri, state)
-  ),
-  on(BlocActions.deleteBloc,
-    (state, action) => adapter.removeOne(action.id, state)
-  ),
-  on(BlocActions.deleteBlocuri,
-    (state, action) => adapter.removeMany(action.ids, state)
-  ),
-  on(BlocActions.loadBlocuri,
-    (state, action) => adapter.setAll(action.blocuri, state)
-  ),
-  on(BlocActions.clearBlocuri,
-    state => adapter.removeAll(state)
+  on(BlocActions.setBloc,
+    (_, action) => ({bloc: action.bloc})
   ),
 );
 
-
-const {
-  selectIds,
-  selectEntities,
-  selectAll,
-  selectTotal,
-} = adapter.getSelectors();
-
 export const selectBlocState = createFeatureSelector<State>(blocuriFeatureKey);
-export const selectBlocEntities = createSelector(selectBlocState, selectEntities);
+export const selectBloc = createSelector(selectBlocState, state => state.bloc);
