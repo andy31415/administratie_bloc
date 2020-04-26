@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {combineLatest, Observable, ReplaySubject} from "rxjs";
-import {Apartment, Scara} from "cheltuieli/app/services/bloc_service";
+import {Apartment, Cheltuiala, Scara} from "cheltuieli/app/services/bloc_service";
 import {Store} from "@ngrx/store";
 import {selectScariEntities} from "cheltuieli/app/state/scara.reducer";
 import {filter, map} from "rxjs/internal/operators";
@@ -16,10 +16,16 @@ export class ScaraResultsComponent {
 
   private readonly scara$: Observable<Scara>;
   readonly apartments$: Observable<Apartment[]>;
+  readonly cheltuieli$ = new ReplaySubject<Cheltuiala[]>(1);
 
   @Input()
   set scaraId(value: number) {
     this.scaraId$.next(value);
+  }
+
+  @Input()
+  set cheltuieli(value: Cheltuiala[]) {
+    this.cheltuieli$.next(value);
   }
 
   constructor(private readonly store: Store<{}>) {

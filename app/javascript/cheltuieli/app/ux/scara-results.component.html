@@ -4,11 +4,9 @@
             <th>Usa</th>
             <th>Titular</th>
             <th>Apa m<sup>3</sup></th>
-            <!--
-            <th *ngFor="let c of (inputCheltuieli$ | async)">
-                {{c.definitie.nume}}
+            <th *ngFor="let c of (cheltuieli$ | async)">
+                {{c.nume}}
             </th>
-            -->
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-apt>
@@ -16,26 +14,28 @@
             <td>{{apt.usa}}</td>
             <td>{{apt.titular}}</td>
             <td>???</td>
-            <!--
-            <td *ngFor="let c of (inputCheltuieli$ | async)">
+            <td *ngFor="let c of (cheltuieli$ | async)">
+                FIXME
+                <!--
                 <cheltuiala-apartament [input]="c" [apartament]="apt"
                                        [totalApartments]="apartmentCount$ | async"
                                        [totalPersons]="personCount$ | async"
                 >
                 </cheltuiala-apartament>
+                -->
             </td>
-            -->
         </tr>
     </ng-template>
     <ng-template pTemplate="footer">
         <tr class="total-line">
             <td colspan="2">Total</td>
             <td>???</td>
+            <td *ngFor="let c of (cheltuieli$ | async)">
+                FIXME
             <!--
-            <td *ngFor="let c of (inputCheltuieli$ | async)">
                 {{ computeTotal(c, scara.apartamente, (apartmentCount$ | async), (personCount$ | async)) | number:'1.2-2' }}
-            </td>
             -->
+            </td>
         </tr>
     </ng-template>
 </p-table>
