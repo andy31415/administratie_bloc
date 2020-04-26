@@ -6,4 +6,5 @@ RUN mkdir /blocadmin
 WORKDIR /blocadmin
 
 ADD ./ /blocadmin
-RUN bundle install --deployment
+RUN bundle config set deployment 'true'
+RUN bundle install 
