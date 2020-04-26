@@ -11,9 +11,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b36fc850-5326-430f-9277-3d2e49b1c67b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AdministratorDeBloc.iws" beforeDir="false" afterPath="$PROJECT_DIR$/AdministratorDeBloc.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/javascript/cheltuieli/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/cheltuieli/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/javascript/cheltuieli/app/state/state.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/cheltuieli/app/state/state.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,10 +264,10 @@
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
     <state width="600" height="428" key="javadoc.popup/70.27.1978.1125@70.27.1978.1125" timestamp="1587874426562" />
-    <state x="722" y="277" width="672" height="678" key="search.everywhere.popup" timestamp="1587929807252">
+    <state x="722" y="277" width="672" height="678" key="search.everywhere.popup" timestamp="1587933430089">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
-    <state x="722" y="277" width="672" height="678" key="search.everywhere.popup/70.27.1978.1125@70.27.1978.1125" timestamp="1587929807252" />
+    <state x="722" y="277" width="672" height="678" key="search.everywhere.popup/70.27.1978.1125@70.27.1978.1125" timestamp="1587933430089" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AdministratorDeBloc@Development__AdministratorDeBloc.rcov" NAME="Development: AdministratorDeBloc Coverage Results" MODIFIED="1587920399968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="AdministratorDeBloc" />
