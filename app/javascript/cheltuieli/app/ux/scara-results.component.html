@@ -23,11 +23,8 @@
         <tr class="total-line">
             <td colspan="2">Total</td>
             <td>???</td>
-            <td *ngFor="let c of (cheltuieli$ | async)">
-                FIXME
-            <!--
-                {{ computeTotal(c, scara.apartamente, (apartmentCount$ | async), (personCount$ | async)) | number:'1.2-2' }}
-            -->
+            <td *ngFor="let c of (costuriTotale$ | async)">
+                {{c.totalValue | number:'1.2-2'}}
             </td>
         </tr>
     </ng-template>

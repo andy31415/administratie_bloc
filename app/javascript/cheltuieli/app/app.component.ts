@@ -6,7 +6,7 @@ import {Store} from '@ngrx/store';
 import {loadStartupData} from "cheltuieli/app/state/startup.effects";
 import {selectApartmentEntities} from "cheltuieli/app/state/apartment.reducer";
 import {selectScariEntities} from "cheltuieli/app/state/scara.reducer";
-import {selectCheltuieliEntities} from "cheltuieli/app/state/cheltuiala.reducer";
+import {CheltuialaWithValue, selectCheltuieliEntities} from "cheltuieli/app/state/cheltuiala.reducer";
 import {selectBloc} from "cheltuieli/app/state/bloc.reducer";
 
 @Component({
@@ -30,8 +30,6 @@ import {selectBloc} from "cheltuieli/app/state/bloc.reducer";
                         <scara-results [scaraId]="scara.id" [cheltuieli]="cheltuieli$ | async"></scara-results>
                     </p-tabPanel>
                 </p-tabView>
-
-
             </div>
         </ng-container>
         <ng-template #loading>
@@ -91,7 +89,7 @@ export class AppComponent implements AfterViewInit {
 
     readonly apartmentCount$: Observable<number>;
     readonly personCount$: Observable<number>;
-    readonly cheltuieli$: Observable<Cheltuiala[]>;
+    readonly cheltuieli$: Observable<CheltuialaWithValue[]>;
 
     constructor(private readonly element: ElementRef,
                 private readonly blocService: BlocService,
