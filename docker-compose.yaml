@@ -12,15 +12,16 @@ services:
   app:
     build: .
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    environment:
+      RAILS_ENV: production
+      SECRET_KEY_BASE: 1185981ce76f07352f8ad746114ceba71ddd8af8c2f729906ecf295d12baa0ed444d08287883ecb7ebfcc2897306304b3c497bc8b435f4d1bb0f178a8455c8cc
+      MYSQL_DATABASE: blocadmin
+      MYSQL_USER: blocadmin_user
+      MYSQL_PASSWORD: bloc1admin2pass3
     depends_on:
       - db
     links:
       - db
     ports:
-      - "3003:3000"
-    environment:
-      RAILS_ENV: production
-      MYSQL_DATABASE: blocadmin
-      MYSQL_USER: blocadmin_user
-      MYSQL_PASSWORD: bloc1admin2pass3
+      - 3003:3000
 
