@@ -17,6 +17,9 @@ import {selectBloc} from "cheltuieli/app/state/bloc.reducer";
                 <div class="ui-toolbar-group-left">
                     Genereaza cheltuieli pentru <span class="bloc-address">{{info.address}}</span>
                 </div>
+                <div class="ui-toolbar-group-right">
+                    <p-button label="Admin" class="ui-button-secondary" (click)="goToAdmin()"></p-button>
+                </div>
             </p-toolbar>
             <div class="content">
                 <p-panel header="Costuri" [toggleable]="true"
@@ -152,22 +155,8 @@ export class AppComponent implements AfterViewInit {
         return c.id;
     }
 
-    /*
-        computeTotal(c: InputCheltuiala, apartments: Apartment[], totalApartamente: number, totalPersoane: number): number {
-            if (!c || !totalPersoane || !totalApartamente || !apartments) {
-                return NaN;
-            }
+    goToAdmin() {
+        browser.setLocation('/admin');
+    }
 
-            let total = 0;
-
-            for (const apt of apartments) {
-                const aptPrice = getPriceFor(c, apt, totalApartamente, totalPersoane)
-                if (isNaN(aptPrice)) {
-                    continue;
-                }
-                total += aptPrice;
-            }
-            return total;
-        }
-     */
 }

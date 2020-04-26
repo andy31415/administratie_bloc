@@ -23,6 +23,7 @@ function isDevelopment(): boolean {
     StoreModule.forFeature(blocuriFeatureKey, blocuriReducer),
     StoreModule.forFeature(cheltuieliFeatureKey, cheltuialaReducer),
     StoreModule.forFeature(scariFeatureKey, scariReducer),
+
     EffectsModule.forRoot([
       ApartmentEffects,
       StartupEffects,

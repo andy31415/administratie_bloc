@@ -11,8 +11,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b36fc850-5326-430f-9277-3d2e49b1c67b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/javascript/cheltuieli/app/ux/scara-results.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/cheltuieli/app/ux/scara-results.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/javascript/cheltuieli/app/ux/scara-results.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/cheltuieli/app/ux/scara-results.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdministratorDeBloc.iws" beforeDir="false" afterPath="$PROJECT_DIR$/AdministratorDeBloc.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/javascript/cheltuieli/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/cheltuieli/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/javascript/cheltuieli/app/state/state.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/cheltuieli/app/state/state.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,10 +256,10 @@
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
     <state x="669" y="203" width="770" height="780" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/70.27.1978.1125@70.27.1978.1125" timestamp="1587827468878" />
-    <state x="750" y="330" width="618" height="518" key="find.popup" timestamp="1587929907995">
+    <state x="750" y="330" width="618" height="518" key="find.popup" timestamp="1587930793954">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
-    <state x="750" y="330" width="618" height="518" key="find.popup/70.27.1978.1125@70.27.1978.1125" timestamp="1587929907995" />
+    <state x="750" y="330" width="618" height="518" key="find.popup/70.27.1978.1125@70.27.1978.1125" timestamp="1587930793954" />
     <state width="600" height="428" key="javadoc.popup" timestamp="1587874426562">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
