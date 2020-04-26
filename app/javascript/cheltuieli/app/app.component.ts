@@ -47,6 +47,15 @@ import {InputCheltuiala} from "cheltuieli/app/cheltuiala_input";
                                     </td>
                                 </tr>
                             </ng-template>
+                            <ng-template pTemplate="footer">
+                                <tr class="total-line">
+                                    <td colspan="2">Total</td>
+                                    <td>???</td>
+                                    <td *ngFor="let c of (inputCheltuieli$ | async)">
+                                        ???
+                                    </td>
+                                </tr>
+                            </ng-template>
                         </p-table>
                     </p-tabPanel>
                 </p-tabView>

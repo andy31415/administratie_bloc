@@ -11,11 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b36fc850-5326-430f-9277-3d2e49b1c67b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/javascript/cheltuieli/app/cheltuiala-apartament.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdministratorDeBloc.iws" beforeDir="false" afterPath="$PROJECT_DIR$/AdministratorDeBloc.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/javascript/cheltuieli/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/cheltuieli/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/javascript/cheltuieli/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/cheltuieli/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/javascript/cheltuieli/app/cheltuiala_input.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/cheltuieli/app/cheltuiala_input.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
