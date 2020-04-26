@@ -17,6 +17,19 @@ export interface Apartment {
     balanta: number | null;
 }
 
+export interface Scara {
+    id: number;
+    nume: string;
+    apartmentIds: number[];
+}
+
+export interface Bloc {
+    id: number;
+    address: string;
+    cheltuialaIds: number[];
+    scaraIds: number[];
+}
+
 export interface ScaraInfo {
     id: number;
     nume: string;

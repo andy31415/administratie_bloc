@@ -1,10 +1,13 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Actions, createEffect, ofType} from '@ngrx/effects';
 import {BlocService} from "cheltuieli/app/services/bloc_service";
-import {createAction, props, Action} from "@ngrx/store";
+import {Action, createAction, props} from "@ngrx/store";
 import {mergeMap} from "rxjs/internal/operators";
 import {from} from "rxjs";
-import {addCheltuiala, loadCheltuieli} from "cheltuieli/app/state/cheltuiala.actions";
+import {loadCheltuieli} from "cheltuieli/app/state/cheltuiala.actions";
+import {addBloc} from "cheltuieli/app/state/bloc.actions";
+import {addScari} from "cheltuieli/app/state/scara.actions";
+import {addApartments} from "cheltuieli/app/state/apartment.actions";
 
 interface StartupDataLoadParameters {
     blocId: number;
@@ -15,22 +18,53 @@ export const loadStartupData = createAction('[Startup] Load Data', props<Startup
 @Injectable()
 export class StartupEffects {
 
-  constructor(private readonly actions$: Actions,
-              private readonly blocService: BlocService) {}
+    constructor(private readonly actions$: Actions,
+                private readonly blocService: BlocService) {
+    }
 
-  initialLoad$ = createEffect(() =>
-      this.actions$.pipe(
-          ofType(loadStartupData),
-          mergeMap(action =>
-              this.blocService.getGenerateReportData(action.blocId).pipe(
-                  mergeMap(data => {
-                      const actions: Action[] = [];
+    initialLoad$ = createEffect(() =>
+        this.actions$.pipe(
+            ofType(loadStartupData),
+            mergeMap(action =>
+                this.blocService.getGenerateReportData(action.blocId).pipe(
+                    mergeMap(data => {
+                        const actions: Action[] = [];
 
-                      actions.push(loadCheltuieli({cheltuieli: data.cheltuieli}))
-                      return from(actions);
-                  })
-              )
-          )));
+                        actions.push(loadCheltuieli({cheltuieli: data.cheltuieli}))
+
+                        actions.push(addBloc({
+                            bloc: {
+                                id: data.id,
+                                address: data.address,
+                                cheltuialaIds: data.cheltuieli.map(c => c.id),
+                                scaraIds: data.scari.map(s => s.id),
+                            }
+                        }));
+
+                        actions.push(addScari({
+                            scari: data.scari.map(s => ({
+                                id: s.id,
+                                nume: s.nume,
+                                apartmentIds: s.apartamente.map(a => a.id),
+                            }))
+                        }));
+
+                        for (const scara of data.scari) {
+                            actions.push(addApartments({
+                                apartments: scara.apartamente.map(a => ({
+                                    id: a.id,
+                                    balanta: a.balanta,
+                                    persoane: a.persoane,
+                                    titular: a.titular,
+                                    usa: a.usa,
+                                })),
+                            }));
+                        }
+
+                        return from(actions);
+                    })
+                )
+            )));
 
 
 }
