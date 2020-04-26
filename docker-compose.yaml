@@ -10,11 +10,7 @@ services:
     volumes:
       - db-data:/var/lib/mysql
     restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: dbpass1234
-      MYSQL_DATABASE: blocadmin
-      MYSQL_USER: blocadmin_user
-      MYSQL_PASSWORD: bloc1admin2pass3
+    env_file: docker.env
     expose:
       - 3306
     healthcheck:
@@ -30,4 +26,5 @@ services:
       - db
     ports:
       - "3000:3000"
+    env_file: docker.env
 
