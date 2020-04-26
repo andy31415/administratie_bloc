@@ -10,7 +10,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b36fc850-5326-430f-9277-3d2e49b1c67b" name="Default Changelist" comment="" />
+    <list default="true" id="b36fc850-5326-430f-9277-3d2e49b1c67b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/config/database.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -170,6 +172,7 @@
       <option name="presentableId" value="Default" />
       <updated>1587819609738</updated>
       <workItem from="1587819610956" duration="8640000" />
+      <workItem from="1587942872804" duration="304000" />
     </task>
     <servers />
   </component>
@@ -191,6 +194,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -252,18 +256,18 @@
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
     <state x="669" y="203" width="770" height="780" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/70.27.1978.1125@70.27.1978.1125" timestamp="1587827468878" />
-    <state x="750" y="330" width="618" height="518" key="find.popup" timestamp="1587930793954">
+    <state x="750" y="330" width="618" height="518" key="find.popup" timestamp="1587942901195">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
-    <state x="750" y="330" width="618" height="518" key="find.popup/70.27.1978.1125@70.27.1978.1125" timestamp="1587930793954" />
+    <state x="750" y="330" width="618" height="518" key="find.popup/70.27.1978.1125@70.27.1978.1125" timestamp="1587942901195" />
     <state width="600" height="428" key="javadoc.popup" timestamp="1587874426562">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
     <state width="600" height="428" key="javadoc.popup/70.27.1978.1125@70.27.1978.1125" timestamp="1587874426562" />
-    <state x="722" y="277" width="672" height="678" key="search.everywhere.popup" timestamp="1587933430089">
+    <state x="722" y="277" width="672" height="678" key="search.everywhere.popup" timestamp="1587943120321">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
-    <state x="722" y="277" width="672" height="678" key="search.everywhere.popup/70.27.1978.1125@70.27.1978.1125" timestamp="1587933430089" />
+    <state x="722" y="277" width="672" height="678" key="search.everywhere.popup/70.27.1978.1125@70.27.1978.1125" timestamp="1587943120321" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AdministratorDeBloc@Development__AdministratorDeBloc.rcov" NAME="Development: AdministratorDeBloc Coverage Results" MODIFIED="1587920399968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="AdministratorDeBloc" />
