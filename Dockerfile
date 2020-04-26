@@ -12,4 +12,5 @@ RUN gem update bundler
 RUN bundle config set deployment 'true'
 RUN bundle install 
 RUN yarn install --check-files
-RUN RAILS_ENV=production rake assets:precompile
+
+EXPOSE 3000
