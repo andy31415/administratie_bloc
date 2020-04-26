@@ -1,11 +1,15 @@
 import {AfterViewInit, Component, ElementRef} from '@angular/core';
-import {Apartment, BlocReportInfo, BlocService} from "cheltuieli/app/services/bloc_service";
-import {Observable, ReplaySubject} from "rxjs";
-import {map, shareReplay} from "rxjs/internal/operators";
+import {Apartment, Bloc, BlocService, Scara} from "cheltuieli/app/services/bloc_service";
+import {combineLatest, Observable, ReplaySubject} from "rxjs";
+import {filter, map, shareReplay, tap} from "rxjs/internal/operators";
 import {InputCheltuiala} from "cheltuieli/app/cheltuiala_input";
 import {getPriceFor} from "cheltuieli/app/computation";
-import { Store } from '@ngrx/store';
+import {Store} from '@ngrx/store';
 import {loadStartupData} from "cheltuieli/app/state/startup.effects";
+import {selectBlocEntities} from "cheltuieli/app/state/bloc.reducer";
+import {selectApartmentEntities} from "cheltuieli/app/state/apartment.reducer";
+import {selectScariEntities} from "cheltuieli/app/state/scara.reducer";
+import {selectCheltuieliEntities} from "cheltuieli/app/state/cheltuiala.reducer";
 
 @Component({
     selector: 'generate-report-app',
@@ -24,7 +28,8 @@ import {loadStartupData} from "cheltuieli/app/state/startup.effects";
                 </p-panel>
 
                 <p-tabView>
-                    <p-tabPanel *ngFor="let scara of info.scari" [header]="scara.nume">
+                    <p-tabPanel *ngFor="let scara of (scari$ | async)" [header]="scara.nume">
+<!--
                         <p-table [value]="scara.apartamente">
                             <ng-template pTemplate="header">
                                 <tr>
@@ -60,6 +65,7 @@ import {loadStartupData} from "cheltuieli/app/state/startup.effects";
                                 </tr>
                             </ng-template>
                         </p-table>
+-->
                     </p-tabPanel>
                 </p-tabView>
 
@@ -105,54 +111,94 @@ import {loadStartupData} from "cheltuieli/app/state/startup.effects";
             .bloc-address {
                 font-weight: bold;
             }
-            
+
             cheltuiala-input {
                 margin: 8px 0;
             }
-            
+
             .output-line:hover > td {
-                    background-color: rgba(96, 96, 255, 0.3);
+                background-color: rgba(96, 96, 255, 0.3);
             }
         `,
     ]
 })
 export class AppComponent implements AfterViewInit {
-    readonly blocInfo$ = new ReplaySubject<BlocReportInfo>(1);
-    readonly inputCheltuieli$: Observable<InputCheltuiala[]> = this.blocInfo$.pipe(
-        map(info => info.cheltuieli.map(definitie => ({definitie, valoare: 0}))),
-        shareReplay(1),
-    );
+    readonly blocId$ = new ReplaySubject<number>();
+    readonly blocInfo$: Observable<Bloc>;
+    readonly scari$: Observable<Scara[]>;
 
-    readonly apartmentCount$ = this.blocInfo$.pipe(
-        map(info =>
-            info.scari.reduce((nr, scara) => nr +
-                scara.apartamente.reduce((nr, apt) => nr + 1, 0), 0)
-        ),
-        shareReplay(1),
-    )
-
-    readonly personCount$ = this.blocInfo$.pipe(
-        map(info =>
-            info.scari.reduce((nr, scara) => nr +
-                scara.apartamente.reduce((nr, apt) => nr + (apt.persoane || 0), 0), 0)
-        ),
-        shareReplay(1),
-    )
+    readonly apartmentCount$: Observable<number>;
+    readonly personCount$: Observable<number>;
+    readonly inputCheltuieli$: Observable<InputCheltuiala[]>;
 
     constructor(private readonly element: ElementRef,
                 private readonly blocService: BlocService,
                 private readonly store: Store<{}>) {
+
+        this.blocInfo$ =
+            combineLatest([store.select(selectBlocEntities), this.blocId$]).pipe(
+                tap(x => {console.log("1: %o", x)}),
+                filter(([a, b]) => !!a && !!b),
+                tap(x => {console.log("2: %o", x)}),
+                map(([entities, id]) => entities[id]),
+                tap(x => {console.log("3: %o", x)}),
+                filter(value => !!value),
+                tap(x => {console.log("4: %o", x)}),
+                shareReplay(1),
+            );
+
+        this.scari$ = combineLatest([this.blocInfo$, store.select(selectScariEntities)]).pipe(
+            filter(([a, b]) => !!a && !!b),
+            map(([bloc, scari]) => bloc.scaraIds.map(id => scari[id]).filter(s => !!s)),
+            shareReplay(1),
+        );
+
+        this.apartmentCount$ = this.scari$.pipe(
+            map(scari => scari.reduce((n, s) => n + s.apartmentIds.length, 0)),
+            filter(value => !!value),
+            shareReplay(1),
+        );
+
+        this.personCount$ = combineLatest([this.scari$, store.select(selectApartmentEntities)]).pipe(
+            filter(([a, b]) => !!a && !!b),
+            map(([scari, aptEntities]) => {
+                const result: Apartment[] = []
+
+                for (const scara of scari) {
+                    for (const aptId of scara.apartmentIds) {
+                        const apt = aptEntities[aptId];
+                        if (!!apt) {
+                            result.push(apt);
+                        }
+                    }
+                }
+
+                return result;
+            }),
+            map(apartments => apartments.reduce((n, a) => n + a.persoane, 0)),
+            filter(value => !!value),
+            shareReplay(1),
+        );
+
+        this.inputCheltuieli$ = combineLatest([this.blocInfo$, this.store.select(selectCheltuieliEntities)]).pipe(
+            filter(([a, b]) => !!a && !!b),
+            map(([bloc, cheltuieli]) => bloc.cheltuialaIds.map(id => cheltuieli[id])),
+            map(cheltuieli => cheltuieli.map(definitie => ({
+                definitie,
+                valoare: 0,
+            }))),
+            shareReplay(1),
+        );
     }
 
     ngAfterViewInit() {
         const blocId = Number(this.element.nativeElement.getAttribute('data-bloc-id'));
-        this.store.dispatch(loadStartupData({blocId}));
 
-        // FIXME: this should go away
-        this.blocService.getGenerateReportData(blocId).subscribe(this.blocInfo$)
+        this.blocId$.next(blocId);
+        this.store.dispatch(loadStartupData({blocId}));
     }
 
-    computeTotal(c: InputCheltuiala, apartments: Apartment[],  totalApartamente: number, totalPersoane: number): number{
+    computeTotal(c: InputCheltuiala, apartments: Apartment[], totalApartamente: number, totalPersoane: number): number {
         if (!c || !totalPersoane || !totalApartamente || !apartments) {
             return NaN;
         }

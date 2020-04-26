@@ -1,4 +1,4 @@
-import { Action, createReducer, on } from '@ngrx/store';
+import {createFeatureSelector, createReducer, createSelector, on} from '@ngrx/store';
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import * as BlocActions from './bloc.actions';
 import {Bloc} from "cheltuieli/app/services/bloc_service";
@@ -9,7 +9,10 @@ export interface State extends EntityState<Bloc> {
   // additional entities state properties
 }
 
-export const adapter: EntityAdapter<Bloc> = createEntityAdapter<Bloc>();
+export const adapter: EntityAdapter<Bloc> = createEntityAdapter<Bloc>({
+  selectId: b => b.id,
+  sortComparer: (a, b) => a.address.localeCompare(b.address),
+});
 
 export const initialState: State = adapter.getInitialState({
   // additional entity state properties
@@ -51,9 +54,12 @@ export const reducer = createReducer(
 );
 
 
-export const {
+const {
   selectIds,
   selectEntities,
   selectAll,
   selectTotal,
 } = adapter.getSelectors();
+
+export const selectBlocState = createFeatureSelector<State>(blocuriFeatureKey);
+export const selectBlocEntities = createSelector(selectBlocState, selectEntities);

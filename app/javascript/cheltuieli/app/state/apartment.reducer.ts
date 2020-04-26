@@ -1,7 +1,8 @@
-import { Action, createReducer, on } from '@ngrx/store';
+import {Action, createFeatureSelector, createReducer, createSelector, on} from '@ngrx/store';
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import * as ApartmentActions from './apartment.actions';
 import {Apartment} from "cheltuieli/app/services/bloc_service";
+import {blocuriFeatureKey} from "cheltuieli/app/state/bloc.reducer";
 
 export const apartmentsFeatureKey = 'apartments';
 
@@ -51,9 +52,12 @@ export const reducer = createReducer(
 );
 
 
-export const {
+const {
   selectIds,
   selectEntities,
   selectAll,
   selectTotal,
 } = adapter.getSelectors();
+
+export const selectApartmentState = createFeatureSelector<State>(apartmentsFeatureKey);
+export const selectApartmentEntities = createSelector(selectApartmentState, selectEntities);

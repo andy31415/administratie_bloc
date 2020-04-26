@@ -5,7 +5,7 @@ import {Action, createAction, props} from "@ngrx/store";
 import {mergeMap} from "rxjs/internal/operators";
 import {from} from "rxjs";
 import {loadCheltuieli} from "cheltuieli/app/state/cheltuiala.actions";
-import {addBloc} from "cheltuieli/app/state/bloc.actions";
+import {addBloc, upsertBloc} from "cheltuieli/app/state/bloc.actions";
 import {addScari} from "cheltuieli/app/state/scara.actions";
 import {addApartments} from "cheltuieli/app/state/apartment.actions";
 
@@ -32,7 +32,7 @@ export class StartupEffects {
 
                         actions.push(loadCheltuieli({cheltuieli: data.cheltuieli}))
 
-                        actions.push(addBloc({
+                        actions.push(upsertBloc({
                             bloc: {
                                 id: data.id,
                                 address: data.address,

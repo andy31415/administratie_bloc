@@ -1,4 +1,4 @@
-import { Action, createReducer, on } from '@ngrx/store';
+import {createFeatureSelector, createReducer, createSelector, on} from '@ngrx/store';
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import * as ScaraActions from './scara.actions';
 import {Scara} from "cheltuieli/app/services/bloc_service";
@@ -51,9 +51,12 @@ export const reducer = createReducer(
 );
 
 
-export const {
+const {
   selectIds,
   selectEntities,
   selectAll,
   selectTotal,
 } = adapter.getSelectors();
+
+export const selectScariState = createFeatureSelector<State>(scariFeatureKey);
+export const selectScariEntities = createSelector(selectScariState, selectEntities);
