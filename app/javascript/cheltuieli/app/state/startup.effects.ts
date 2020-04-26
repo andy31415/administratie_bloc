@@ -54,6 +54,7 @@ export class StartupEffects {
                             actions.push(addApartments({
                                 apartments: scara.apartamente.map(a => ({
                                     id: a.id,
+                                    scaraId: scara.id,
                                     balanta: a.balanta,
                                     persoane: a.persoane,
                                     titular: a.titular,

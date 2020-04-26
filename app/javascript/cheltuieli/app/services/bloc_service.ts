@@ -11,6 +11,7 @@ export interface Cheltuiala {
 
 export interface Apartment {
     id: number;
+    scaraId: number;
     titular: string;
     usa: string;
     persoane: number | null;

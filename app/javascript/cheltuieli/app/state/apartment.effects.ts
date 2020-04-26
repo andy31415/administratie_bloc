@@ -105,7 +105,7 @@ export class ApartmentEffects {
     recomputeCosts$ = createEffect(() =>
         this.actions$.pipe(
             ofType(recomputeCosts),
-            debounceTime(100),
+            debounceTime(500),
             withLatestFrom(
                 combineLatest([
                     this.store.select(selectAllApartments),
