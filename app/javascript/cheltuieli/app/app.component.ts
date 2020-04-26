@@ -6,26 +6,50 @@ import {Subject} from "rxjs";
   selector: 'generate-report-app',
   template: `      
     <ng-container *ngIf="blocInfo$ | async as info; else loading">
-      <h3> 
-        Genereaza cheltuieli pentru <span class="bloc-address">{{info.address}}</span>
-      </h3>
-      
-      <p-card>
-        <p-header>Costuri</p-header>
-          
-        <cheltuiala-input *ngFor="let c of info.cheltuieli" [cheltuiala]="c"></cheltuiala-input>
-      </p-card>
-      
-      <div>
-        FIXME: implement
+      <p-toolbar class="toolbar">
+        <h3>
+          Genereaza cheltuieli pentru <span class="bloc-address">{{info.address}}</span>
+        </h3>
+      </p-toolbar>
+      <div class="content">
+        <p-card class="costuri-input">
+          <div class="card-title">Costuri</div>
+          <cheltuiala-input *ngFor="let c of info.cheltuieli" [cheltuiala]="c"></cheltuiala-input>
+        </p-card>
       </div>
     </ng-container>
-    <ng-template #loading>Loading...</ng-template>
+    <ng-template #loading>
+      <p-toolbar>Loading...</p-toolbar>
+    </ng-template>
   `,
   styles: [
-   `.bloc-address {
+   `
+    :host {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+    }
+    
+    .content {
+      display: flex;
+      flex-direction: column;
+      margin: 16px;
+    }
+    
+    .card-title {
+      margin-bottom: 16px;
+      font-size: 20px;
       font-weight: bold;
-    }`,
+    }
+    
+    .costuri-input {
+      margin: 0 auto;
+    }
+    
+    .bloc-address {
+      font-weight: bold;
+    }
+    `,
   ]
 })
 export class AppComponent implements AfterViewInit {

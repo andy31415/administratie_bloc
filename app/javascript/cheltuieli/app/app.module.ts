@@ -6,7 +6,7 @@ import { ButtonModule } from 'primeng/button';
 
 import { AppComponent } from './app.component';
 import {CheltuialaInputComponent} from "./cheltuiala_input";
-import {CardModule} from "primeng";
+import {CardModule, ToolbarModule} from "primeng";
 
 @NgModule({
   declarations: [
@@ -19,6 +19,7 @@ import {CardModule} from "primeng";
     ButtonModule,
     HttpClientModule,
     CardModule,
+    ToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
