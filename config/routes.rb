@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-
-  get '/rapoarte/generate/bloc/:id', to: "raport_lunar#start", as: 'genereaza_raport_lunar'
-
+  get '/rapoarte/generate/bloc/:id(.:format)', to: "raport_lunar#start",
+      as: 'genereaza_raport_lunar', defaults: { :format => 'html' }
 end

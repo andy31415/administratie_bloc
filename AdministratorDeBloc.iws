@@ -11,7 +11,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b36fc850-5326-430f-9277-3d2e49b1c67b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/javascript/cheltuieli/app/app.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/javascript/cheltuieli/app/app.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/javascript/cheltuieli/app/bloc_service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/javascript/cheltuieli/app/cheltuiala_input.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/javascript/cheltuieli/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/javascript/cheltuieli/polyfills.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/javascript/packs/cheltuieli.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/javascript/stylesheets/cheltuieli.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/raport_lunar/start.json.jbuilder" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/webpack/loaders/typescript.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdministratorDeBloc.iws" beforeDir="false" afterPath="$PROJECT_DIR$/AdministratorDeBloc.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/raport_lunar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/raport_lunar.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/raport_lunar_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/raport_lunar_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/cheltuieli.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/cheltuieli.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/raport_lunar/start.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/raport_lunar/start.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/initializers/assets.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/initializers/assets.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/webpack/environment.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/webpack/environment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/webpacker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/webpacker.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +67,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="configurable.group.language" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RunManager" selected="Rails.Development: AdministratorDeBloc">
     <configuration name="Development: AdministratorDeBloc" type="RailsRunConfigurationType" factoryName="Rails">
@@ -170,6 +193,11 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+    <option name="additionalRoots">
+      <list>
+        <option value="$PROJECT_DIR$/node_modules" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -190,38 +218,38 @@
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
     <state x="792" y="338" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/70.27.1978.1125@70.27.1978.1125" timestamp="1587841045442" />
-    <state width="1932" height="348" key="GridCell.Tab.0.bottom" timestamp="1587840708028">
+    <state width="1932" height="331" key="GridCell.Tab.0.bottom" timestamp="1587868470961">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
-    <state width="1932" height="348" key="GridCell.Tab.0.bottom/70.27.1978.1125@70.27.1978.1125" timestamp="1587840708028" />
-    <state width="1932" height="348" key="GridCell.Tab.0.center" timestamp="1587840708027">
+    <state width="1932" height="331" key="GridCell.Tab.0.bottom/70.27.1978.1125@70.27.1978.1125" timestamp="1587868470961" />
+    <state width="1932" height="331" key="GridCell.Tab.0.center" timestamp="1587868470961">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
-    <state width="1932" height="348" key="GridCell.Tab.0.center/70.27.1978.1125@70.27.1978.1125" timestamp="1587840708027" />
-    <state width="1932" height="348" key="GridCell.Tab.0.left" timestamp="1587840708027">
+    <state width="1932" height="331" key="GridCell.Tab.0.center/70.27.1978.1125@70.27.1978.1125" timestamp="1587868470961" />
+    <state width="1932" height="331" key="GridCell.Tab.0.left" timestamp="1587868470961">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
-    <state width="1932" height="348" key="GridCell.Tab.0.left/70.27.1978.1125@70.27.1978.1125" timestamp="1587840708027" />
-    <state width="1932" height="348" key="GridCell.Tab.0.right" timestamp="1587840708028">
+    <state width="1932" height="331" key="GridCell.Tab.0.left/70.27.1978.1125@70.27.1978.1125" timestamp="1587868470961" />
+    <state width="1932" height="331" key="GridCell.Tab.0.right" timestamp="1587868470961">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
-    <state width="1932" height="348" key="GridCell.Tab.0.right/70.27.1978.1125@70.27.1978.1125" timestamp="1587840708028" />
-    <state width="1932" height="348" key="GridCell.Tab.1.bottom" timestamp="1587840708029">
+    <state width="1932" height="331" key="GridCell.Tab.0.right/70.27.1978.1125@70.27.1978.1125" timestamp="1587868470961" />
+    <state width="1932" height="331" key="GridCell.Tab.1.bottom" timestamp="1587868470962">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
-    <state width="1932" height="348" key="GridCell.Tab.1.bottom/70.27.1978.1125@70.27.1978.1125" timestamp="1587840708029" />
-    <state width="1932" height="348" key="GridCell.Tab.1.center" timestamp="1587840708028">
+    <state width="1932" height="331" key="GridCell.Tab.1.bottom/70.27.1978.1125@70.27.1978.1125" timestamp="1587868470962" />
+    <state width="1932" height="331" key="GridCell.Tab.1.center" timestamp="1587868470962">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
-    <state width="1932" height="348" key="GridCell.Tab.1.center/70.27.1978.1125@70.27.1978.1125" timestamp="1587840708028" />
-    <state width="1932" height="348" key="GridCell.Tab.1.left" timestamp="1587840708028">
+    <state width="1932" height="331" key="GridCell.Tab.1.center/70.27.1978.1125@70.27.1978.1125" timestamp="1587868470962" />
+    <state width="1932" height="331" key="GridCell.Tab.1.left" timestamp="1587868470962">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
-    <state width="1932" height="348" key="GridCell.Tab.1.left/70.27.1978.1125@70.27.1978.1125" timestamp="1587840708028" />
-    <state width="1932" height="348" key="GridCell.Tab.1.right" timestamp="1587840708028">
+    <state width="1932" height="331" key="GridCell.Tab.1.left/70.27.1978.1125@70.27.1978.1125" timestamp="1587868470962" />
+    <state width="1932" height="331" key="GridCell.Tab.1.right" timestamp="1587868470962">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
-    <state width="1932" height="348" key="GridCell.Tab.1.right/70.27.1978.1125@70.27.1978.1125" timestamp="1587840708028" />
+    <state width="1932" height="331" key="GridCell.Tab.1.right/70.27.1978.1125@70.27.1978.1125" timestamp="1587868470962" />
     <state width="263" height="500" key="HiddenNamespacesPopup" timestamp="1587835240244">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
@@ -230,16 +258,16 @@
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
     <state x="669" y="203" width="770" height="780" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/70.27.1978.1125@70.27.1978.1125" timestamp="1587827468878" />
-    <state x="750" y="330" width="618" height="518" key="find.popup" timestamp="1587840373611">
+    <state x="750" y="330" width="618" height="518" key="find.popup" timestamp="1587867726682">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
-    <state x="750" y="330" width="618" height="518" key="find.popup/70.27.1978.1125@70.27.1978.1125" timestamp="1587840373611" />
-    <state x="722" y="277" width="672" height="678" key="search.everywhere.popup" timestamp="1587841324661">
+    <state x="750" y="330" width="618" height="518" key="find.popup/70.27.1978.1125@70.27.1978.1125" timestamp="1587867726682" />
+    <state x="722" y="277" width="672" height="678" key="search.everywhere.popup" timestamp="1587868700895">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
-    <state x="722" y="277" width="672" height="678" key="search.everywhere.popup/70.27.1978.1125@70.27.1978.1125" timestamp="1587841324661" />
+    <state x="722" y="277" width="672" height="678" key="search.everywhere.popup/70.27.1978.1125@70.27.1978.1125" timestamp="1587868700895" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/AdministratorDeBloc@Development__AdministratorDeBloc.rcov" NAME="Development: AdministratorDeBloc Coverage Results" MODIFIED="1587840707997" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="AdministratorDeBloc" />
+    <SUITE FILE_PATH="coverage/AdministratorDeBloc@Development__AdministratorDeBloc.rcov" NAME="Development: AdministratorDeBloc Coverage Results" MODIFIED="1587868470946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="AdministratorDeBloc" />
   </component>
 </project>

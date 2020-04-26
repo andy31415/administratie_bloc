@@ -1,11 +1,3 @@
-<h3>
-  Raport lunar pentru <span class="adresa-bloc"> <%= @bloc.address %> </span>
-</h3>
+<generate-report-app data-bloc-id="<%= @bloc_id %>"></generate-report-app>
 
-<div>
-  <div>Cheltuieli</div>
-
-  <% @bloc.cheltuieli.each do |c| %>
-    <%= c.nume %>
-  <% end %>
-</div>
+<%= javascript_pack_tag "cheltuieli" %>
