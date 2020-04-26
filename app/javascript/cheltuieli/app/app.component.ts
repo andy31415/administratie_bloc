@@ -53,7 +53,7 @@ import {getPriceFor} from "cheltuieli/app/computation";
                                     <td colspan="2">Total</td>
                                     <td>???</td>
                                     <td *ngFor="let c of (inputCheltuieli$ | async)">
-                                        {{computeTotal(c, scara.apartamente, (apartmentCount$ | async), (personCount$ | async)) }}
+                                        {{ computeTotal(c, scara.apartamente, (apartmentCount$ | async), (personCount$ | async)) | number:'1.2-2' }}
                                     </td>
                                 </tr>
                             </ng-template>
