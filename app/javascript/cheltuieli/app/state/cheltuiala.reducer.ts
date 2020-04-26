@@ -5,11 +5,15 @@ import {Cheltuiala} from "cheltuieli/app/services/bloc_service";
 
 export const cheltuieliFeatureKey = 'cheltuiali';
 
-export interface State extends EntityState<Cheltuiala> {
+export interface CheltuialaWithValue extends Cheltuiala {
+  value: number;
+}
+
+export interface State extends EntityState<CheltuialaWithValue> {
   // additional entities state properties
 }
 
-export const adapter: EntityAdapter<Cheltuiala> = createEntityAdapter<Cheltuiala>();
+export const adapter: EntityAdapter<CheltuialaWithValue> = createEntityAdapter<CheltuialaWithValue>();
 
 export const initialState: State = adapter.getInitialState({
   // additional entity state properties
@@ -18,35 +22,8 @@ export const initialState: State = adapter.getInitialState({
 
 export const reducer = createReducer(
   initialState,
-  on(CheltuialaActions.addCheltuiala,
-    (state, action) => adapter.addOne(action.cheltuiala, state)
-  ),
-  on(CheltuialaActions.upsertCheltuiala,
-    (state, action) => adapter.upsertOne(action.cheltuiala, state)
-  ),
-  on(CheltuialaActions.addCheltuieli,
-    (state, action) => adapter.addMany(action.cheltuieli, state)
-  ),
-  on(CheltuialaActions.upsertCheltuieli,
-    (state, action) => adapter.upsertMany(action.cheltuieli, state)
-  ),
-  on(CheltuialaActions.updateCheltuiala,
-    (state, action) => adapter.updateOne(action.cheltuiala, state)
-  ),
-  on(CheltuialaActions.updateCheltuieli,
-    (state, action) => adapter.updateMany(action.cheltuieli, state)
-  ),
-  on(CheltuialaActions.deleteCheltuiala,
-    (state, action) => adapter.removeOne(action.id, state)
-  ),
-  on(CheltuialaActions.deleteCheltuieli,
-    (state, action) => adapter.removeMany(action.ids, state)
-  ),
   on(CheltuialaActions.loadCheltuieli,
-    (state, action) => adapter.setAll(action.cheltuieli, state)
-  ),
-  on(CheltuialaActions.clearCheltuieli,
-    state => adapter.removeAll(state)
+    (state, action) => adapter.setAll(action.cheltuieli.map(c => ({...c, value: 0})), state)
   ),
 );
 

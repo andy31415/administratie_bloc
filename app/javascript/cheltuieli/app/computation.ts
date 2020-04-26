@@ -1,4 +1,4 @@
-import {InputCheltuiala} from "cheltuieli/app/cheltuiala_input";
+import {InputCheltuiala} from "cheltuieli/app/ux/cheltuiala_input";
 import {Apartment} from "cheltuieli/app/services/bloc_service";
 
 export function getPriceFor(input: InputCheltuiala, apartament: Apartment, totalApartments: number, totalPersons: number): number {

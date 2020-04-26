@@ -15,14 +15,7 @@
             <td>{{apt.titular}}</td>
             <td>???</td>
             <td *ngFor="let c of (cheltuieli$ | async)">
-                FIXME
-                <!--
-                <cheltuiala-apartament [input]="c" [apartament]="apt"
-                                       [totalApartments]="apartmentCount$ | async"
-                                       [totalPersons]="personCount$ | async"
-                >
-                </cheltuiala-apartament>
-                -->
+                <cheltuiala-apartament [cheltuialaId]="c.id" [apartmentId]="apt.id"></cheltuiala-apartament>
             </td>
         </tr>
     </ng-template>

@@ -1,62 +1,41 @@
-import {Action, createFeatureSelector, createReducer, createSelector, on} from '@ngrx/store';
-import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
+import {createFeatureSelector, createReducer, createSelector, on} from '@ngrx/store';
+import {createEntityAdapter, Dictionary, EntityAdapter, EntityState} from '@ngrx/entity';
 import * as ApartmentActions from './apartment.actions';
 import {Apartment} from "cheltuieli/app/services/bloc_service";
-import {blocuriFeatureKey} from "cheltuieli/app/state/bloc.reducer";
 
 export const apartmentsFeatureKey = 'apartments';
 
-export interface State extends EntityState<Apartment> {
-  // additional entities state properties
+export interface ApartmentWithChetuliliValues extends Apartment {
+    cheltuieliValue: Dictionary<number>
 }
 
-export const adapter: EntityAdapter<Apartment> = createEntityAdapter<Apartment>();
+export interface State extends EntityState<ApartmentWithChetuliliValues> {
+    // additional entities state properties
+}
+
+export const adapter: EntityAdapter<ApartmentWithChetuliliValues> = createEntityAdapter<ApartmentWithChetuliliValues>();
 
 export const initialState: State = adapter.getInitialState({
-  // additional entity state properties
+    // additional entity state properties
 });
 
 
 export const reducer = createReducer(
-  initialState,
-  on(ApartmentActions.addApartment,
-    (state, action) => adapter.addOne(action.apartment, state)
-  ),
-  on(ApartmentActions.upsertApartment,
-    (state, action) => adapter.upsertOne(action.apartment, state)
-  ),
-  on(ApartmentActions.addApartments,
-    (state, action) => adapter.addMany(action.apartments, state)
-  ),
-  on(ApartmentActions.upsertApartments,
-    (state, action) => adapter.upsertMany(action.apartments, state)
-  ),
-  on(ApartmentActions.updateApartment,
-    (state, action) => adapter.updateOne(action.apartment, state)
-  ),
-  on(ApartmentActions.updateApartments,
-    (state, action) => adapter.updateMany(action.apartments, state)
-  ),
-  on(ApartmentActions.deleteApartment,
-    (state, action) => adapter.removeOne(action.id, state)
-  ),
-  on(ApartmentActions.deleteApartments,
-    (state, action) => adapter.removeMany(action.ids, state)
-  ),
-  on(ApartmentActions.loadApartments,
-    (state, action) => adapter.setAll(action.apartments, state)
-  ),
-  on(ApartmentActions.clearApartments,
-    state => adapter.removeAll(state)
-  ),
+    initialState,
+    on(ApartmentActions.addApartments,
+        (state, action) => adapter.addMany(action.apartments.map(apt => ({
+            ...apt,
+            cheltuieliValue: {},
+        })), state)
+    ),
 );
 
 
 const {
-  selectIds,
-  selectEntities,
-  selectAll,
-  selectTotal,
+    selectIds,
+    selectEntities,
+    selectAll,
+    selectTotal,
 } = adapter.getSelectors();
 
 export const selectApartmentState = createFeatureSelector<State>(apartmentsFeatureKey);

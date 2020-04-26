@@ -2,7 +2,7 @@ import {AfterViewInit, Component, ElementRef} from '@angular/core';
 import {Apartment, Bloc, BlocService, Scara} from "cheltuieli/app/services/bloc_service";
 import {combineLatest, Observable, ReplaySubject} from "rxjs";
 import {filter, map, shareReplay} from "rxjs/internal/operators";
-import {InputCheltuiala} from "cheltuieli/app/cheltuiala_input";
+import {InputCheltuiala} from "cheltuieli/app/ux/cheltuiala_input";
 import {getPriceFor} from "cheltuieli/app/computation";
 import {Store} from '@ngrx/store';
 import {loadStartupData} from "cheltuieli/app/state/startup.effects";
