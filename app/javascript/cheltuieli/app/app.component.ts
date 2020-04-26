@@ -1,8 +1,9 @@
 import {AfterViewInit, Component, ElementRef} from '@angular/core';
-import {BlocReportInfo, BlocService} from "cheltuieli/app/bloc_service";
+import {ApartamentInfo, BlocReportInfo, BlocService} from "cheltuieli/app/bloc_service";
 import {Observable, ReplaySubject} from "rxjs";
 import {map, shareReplay} from "rxjs/internal/operators";
 import {InputCheltuiala} from "cheltuieli/app/cheltuiala_input";
+import {getPriceFor} from "cheltuieli/app/computation";
 
 @Component({
     selector: 'generate-report-app',
@@ -52,7 +53,7 @@ import {InputCheltuiala} from "cheltuieli/app/cheltuiala_input";
                                     <td colspan="2">Total</td>
                                     <td>???</td>
                                     <td *ngFor="let c of (inputCheltuieli$ | async)">
-                                        ???
+                                        {{computeTotal(c, scara.apartamente, (apartmentCount$ | async), (personCount$ | async)) }}
                                     </td>
                                 </tr>
                             </ng-template>
@@ -144,5 +145,22 @@ export class AppComponent implements AfterViewInit {
         const blocId = Number(this.element.nativeElement.getAttribute('data-bloc-id'));
 
         this.blocService.getGenerateReportData(blocId).subscribe(this.blocInfo$)
+    }
+
+    computeTotal(c: InputCheltuiala, apartments: ApartamentInfo[],  totalApartamente: number, totalPersoane: number): number{
+        if (!c || !totalPersoane || !totalApartamente || !apartments) {
+            return NaN;
+        }
+
+        let total = 0;
+
+        for (const apt of apartments) {
+            const aptPrice = getPriceFor(c, apt, totalApartamente, totalPersoane)
+            if (isNaN(aptPrice)) {
+                continue;
+            }
+            total += aptPrice;
+        }
+        return total;
     }
 }

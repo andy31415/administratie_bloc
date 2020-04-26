@@ -1,6 +1,7 @@
 import {Component, Input} from "@angular/core";
 import {InputCheltuiala} from "cheltuieli/app/cheltuiala_input";
 import {ApartamentInfo, ScaraInfo} from "cheltuieli/app/bloc_service";
+import {getPriceFor} from "cheltuieli/app/computation";
 
 @Component({
     selector: 'cheltuiala-apartament',
@@ -22,16 +23,6 @@ export class CheltuialaApartament {
     totalPersons = 0;
 
     get price(): number {
-        if (this.input.definitie.tip === "cost_fix_pe_apartament") {
-            return this.input.valoare;
-        } else if (this.input.definitie.tip === "cost_fix_pe_persoana") {
-            return this.input.valoare * (this.apartament.persoane || 0);
-        } else if (this.input.definitie.tip === "impartit_la_nr_apartamente") {
-            return this.input.valoare / this.totalApartments;
-        } else if (this.input.definitie.tip === "impartit_la_nr_persoane") {
-            return this.input.valoare * (this.apartament.persoane || 0) / this.totalPersons;
-        } else {
-            return NaN;
-        }
+        return getPriceFor(this.input, this.apartament, this.totalApartments, this.totalPersons);
     }
 }
