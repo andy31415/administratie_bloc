@@ -14,5 +14,6 @@ COPY yarn* ./
 COPY package* ./
 RUN yarn install --check-files
 COPY . /blocadmin
+RUN rake assets:precompile
 
 EXPOSE 3000

@@ -1,3 +1,9 @@
+## Build the app
+
+```sh
+sudo docker-compose build bloc_app
+```
+
 ## Initialize an empty database
 
 ```sh
