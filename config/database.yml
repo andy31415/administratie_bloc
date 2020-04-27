@@ -22,12 +22,11 @@ test:
 
 production:
   <<: *default
-  adapter: mysql2
-  encoding: utf8
-  database: <%= ENV['MYSQL_DATABSE'] || 'blocadmin' %>
+  encoding: unicode
   pool: 5
-  host: <%= ENV['MYSQL_HOST'] || '127.0.0.1' %>
-  port: <%= ENV['MYSQL_PORT'] || 3306 %>
-  username: <%= ENV['MYSQL_USER'] %>
-  password: <%= ENV['MYSQL_PASSWORD'] %>
+  adapter: postgresql
+  database: <%= ENV['POSTGRES_DB'] || 'blocadmin' %>
+  host: <%= ENV['DB_HOST'] || '127.0.0.1' %>
+  username: <%= ENV['POSTGRES_USER'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
 
