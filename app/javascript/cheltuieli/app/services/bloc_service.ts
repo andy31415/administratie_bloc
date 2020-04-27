@@ -8,8 +8,7 @@ export interface Cheltuiala {
     nume: string;
     tip: "apa" | "cost_fix_pe_apartament" | "cost_fix_pe_persoana" |
         "impartit_la_nr_apartamente_in_bloc" | "impartit_la_nr_persoane_in_bloc" |
-        "impartit_la_nr_apartamente_in_scara" | "impartit_la_nr_persoane_in_scara" |
-    | "manual"
+        "impartit_la_nr_apartamente_in_scara" | "impartit_la_nr_persoane_in_scara" | "manual"
 }
 
 export interface Apartment {
