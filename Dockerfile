@@ -15,6 +15,6 @@ COPY package* ./
 RUN yarn install --check-files
 COPY . /blocadmin
 RUN rake assets:precompile
-RUN webpack
+RUN bin/webpack
 
 EXPOSE 3000
