@@ -16,7 +16,7 @@ services:
     command: -h "*"
   bloc_app:
     build: .
-    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    command: bundle exec rails s -p 3000 -b '0.0.0.0' -e production
     depends_on:
       - postgres-db
     links:
