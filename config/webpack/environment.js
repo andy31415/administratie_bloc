@@ -12,7 +12,7 @@ for (key of ['css', 'sass', 'moduleCss', 'moduleSass']) {
     } else {
         loader.exclude = []
     }
-    loader.exclude.push(/\/cheltuieli\/app\//);
+    loader.exclude.push(/\/javascript\/cheltuieli\/app\//);
 }
 
 environment.plugins.prepend('jquery', jquery)

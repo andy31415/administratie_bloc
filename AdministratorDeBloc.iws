@@ -10,7 +10,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b36fc850-5326-430f-9277-3d2e49b1c67b" name="Default Changelist" comment="" />
+    <list default="true" id="b36fc850-5326-430f-9277-3d2e49b1c67b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/AdministratorDeBloc.iws" beforeDir="false" afterPath="$PROJECT_DIR$/AdministratorDeBloc.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/webpack/environment.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/webpack/environment.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -170,7 +173,7 @@
       <option name="presentableId" value="Default" />
       <updated>1587819609738</updated>
       <workItem from="1587819610956" duration="8640000" />
-      <workItem from="1587942872804" duration="6709000" />
+      <workItem from="1587942872804" duration="8118000" />
     </task>
     <servers />
   </component>
@@ -265,10 +268,10 @@
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
     <state width="600" height="428" key="javadoc.popup/70.27.1978.1125@70.27.1978.1125" timestamp="1587874426562" />
-    <state x="722" y="277" width="672" height="678" key="search.everywhere.popup" timestamp="1587954743534">
+    <state x="722" y="277" width="672" height="678" key="search.everywhere.popup" timestamp="1587991867414">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
-    <state x="722" y="277" width="672" height="678" key="search.everywhere.popup/70.27.1978.1125@70.27.1978.1125" timestamp="1587954743534" />
+    <state x="722" y="277" width="672" height="678" key="search.everywhere.popup/70.27.1978.1125@70.27.1978.1125" timestamp="1587991867414" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AdministratorDeBloc@Development__AdministratorDeBloc.rcov" NAME="Development: AdministratorDeBloc Coverage Results" MODIFIED="1587920399968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="AdministratorDeBloc" />
