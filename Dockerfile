@@ -14,7 +14,6 @@ COPY yarn* ./
 COPY package* ./
 RUN yarn install --check-files
 COPY . /blocadmin
-RUN rake assets:precompile
-RUN bin/webpack
+RUN RAILS_ENV=production bin/webpack
 
 EXPOSE 3000

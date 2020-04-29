@@ -12,7 +12,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b36fc850-5326-430f-9277-3d2e49b1c67b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/AdministratorDeBloc.iws" beforeDir="false" afterPath="$PROJECT_DIR$/AdministratorDeBloc.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/webpack/environment.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/webpack/environment.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +172,7 @@
       <option name="presentableId" value="Default" />
       <updated>1587819609738</updated>
       <workItem from="1587819610956" duration="8640000" />
-      <workItem from="1587942872804" duration="8118000" />
+      <workItem from="1587942872804" duration="8935000" />
     </task>
     <servers />
   </component>
@@ -216,38 +215,38 @@
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
     <state x="842" y="347" width="424" height="491" key="FileChooserDialogImpl/70.27.1978.1125@70.27.1978.1125" timestamp="1587910662961" />
-    <state width="1932" height="369" key="GridCell.Tab.0.bottom" timestamp="1587933754977">
+    <state width="1932" height="270" key="GridCell.Tab.0.bottom" timestamp="1588199646950">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
-    <state width="1932" height="369" key="GridCell.Tab.0.bottom/70.27.1978.1125@70.27.1978.1125" timestamp="1587933754977" />
-    <state width="1932" height="369" key="GridCell.Tab.0.center" timestamp="1587933754977">
+    <state width="1932" height="270" key="GridCell.Tab.0.bottom/70.27.1978.1125@70.27.1978.1125" timestamp="1588199646950" />
+    <state width="1932" height="270" key="GridCell.Tab.0.center" timestamp="1588199646950">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
-    <state width="1932" height="369" key="GridCell.Tab.0.center/70.27.1978.1125@70.27.1978.1125" timestamp="1587933754977" />
-    <state width="1932" height="369" key="GridCell.Tab.0.left" timestamp="1587933754977">
+    <state width="1932" height="270" key="GridCell.Tab.0.center/70.27.1978.1125@70.27.1978.1125" timestamp="1588199646950" />
+    <state width="1932" height="270" key="GridCell.Tab.0.left" timestamp="1588199646950">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
-    <state width="1932" height="369" key="GridCell.Tab.0.left/70.27.1978.1125@70.27.1978.1125" timestamp="1587933754977" />
-    <state width="1932" height="369" key="GridCell.Tab.0.right" timestamp="1587933754977">
+    <state width="1932" height="270" key="GridCell.Tab.0.left/70.27.1978.1125@70.27.1978.1125" timestamp="1588199646950" />
+    <state width="1932" height="270" key="GridCell.Tab.0.right" timestamp="1588199646950">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
-    <state width="1932" height="369" key="GridCell.Tab.0.right/70.27.1978.1125@70.27.1978.1125" timestamp="1587933754977" />
-    <state width="1932" height="369" key="GridCell.Tab.1.bottom" timestamp="1587933754978">
+    <state width="1932" height="270" key="GridCell.Tab.0.right/70.27.1978.1125@70.27.1978.1125" timestamp="1588199646950" />
+    <state width="1932" height="270" key="GridCell.Tab.1.bottom" timestamp="1588199646951">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
-    <state width="1932" height="369" key="GridCell.Tab.1.bottom/70.27.1978.1125@70.27.1978.1125" timestamp="1587933754978" />
-    <state width="1932" height="369" key="GridCell.Tab.1.center" timestamp="1587933754978">
+    <state width="1932" height="270" key="GridCell.Tab.1.bottom/70.27.1978.1125@70.27.1978.1125" timestamp="1588199646951" />
+    <state width="1932" height="270" key="GridCell.Tab.1.center" timestamp="1588199646951">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
-    <state width="1932" height="369" key="GridCell.Tab.1.center/70.27.1978.1125@70.27.1978.1125" timestamp="1587933754978" />
-    <state width="1932" height="369" key="GridCell.Tab.1.left" timestamp="1587933754977">
+    <state width="1932" height="270" key="GridCell.Tab.1.center/70.27.1978.1125@70.27.1978.1125" timestamp="1588199646951" />
+    <state width="1932" height="270" key="GridCell.Tab.1.left" timestamp="1588199646950">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
-    <state width="1932" height="369" key="GridCell.Tab.1.left/70.27.1978.1125@70.27.1978.1125" timestamp="1587933754977" />
-    <state width="1932" height="369" key="GridCell.Tab.1.right" timestamp="1587933754978">
+    <state width="1932" height="270" key="GridCell.Tab.1.left/70.27.1978.1125@70.27.1978.1125" timestamp="1588199646950" />
+    <state width="1932" height="270" key="GridCell.Tab.1.right" timestamp="1588199646951">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
-    <state width="1932" height="369" key="GridCell.Tab.1.right/70.27.1978.1125@70.27.1978.1125" timestamp="1587933754978" />
+    <state width="1932" height="270" key="GridCell.Tab.1.right/70.27.1978.1125@70.27.1978.1125" timestamp="1588199646951" />
     <state width="263" height="500" key="HiddenNamespacesPopup" timestamp="1587835240244">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
@@ -260,20 +259,20 @@
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
     <state x="669" y="203" width="770" height="780" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/70.27.1978.1125@70.27.1978.1125" timestamp="1587827468878" />
-    <state x="750" y="330" width="618" height="518" key="find.popup" timestamp="1587942901195">
+    <state x="750" y="330" width="618" height="518" key="find.popup" timestamp="1588199601885">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
-    <state x="750" y="330" width="618" height="518" key="find.popup/70.27.1978.1125@70.27.1978.1125" timestamp="1587942901195" />
+    <state x="750" y="330" width="618" height="518" key="find.popup/70.27.1978.1125@70.27.1978.1125" timestamp="1588199601885" />
     <state width="600" height="428" key="javadoc.popup" timestamp="1587874426562">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
     <state width="600" height="428" key="javadoc.popup/70.27.1978.1125@70.27.1978.1125" timestamp="1587874426562" />
-    <state x="722" y="277" width="672" height="678" key="search.everywhere.popup" timestamp="1587991867414">
+    <state x="722" y="277" width="672" height="678" key="search.everywhere.popup" timestamp="1588199939190">
       <screen x="70" y="27" width="1978" height="1125" />
     </state>
-    <state x="722" y="277" width="672" height="678" key="search.everywhere.popup/70.27.1978.1125@70.27.1978.1125" timestamp="1587991867414" />
+    <state x="722" y="277" width="672" height="678" key="search.everywhere.popup/70.27.1978.1125@70.27.1978.1125" timestamp="1588199939190" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/AdministratorDeBloc@Development__AdministratorDeBloc.rcov" NAME="Development: AdministratorDeBloc Coverage Results" MODIFIED="1587920399968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="AdministratorDeBloc" />
+    <SUITE FILE_PATH="coverage/AdministratorDeBloc@Development__AdministratorDeBloc.rcov" NAME="Development: AdministratorDeBloc Coverage Results" MODIFIED="1588199646932" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="AdministratorDeBloc" />
   </component>
 </project>
